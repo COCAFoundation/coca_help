@@ -62,7 +62,7 @@
         </div>
         <div class="row banner-bottom hidden-sm hidden-xs"></div> 
         <div class="row">
-          <div class="col-md-12">                  
+          <div class="col-md-6 col-md-offset-3">                  
             <!-- ANGULAR VIEW-FRAME -->
             <div ng-view class="view-frame"></div></div>
         </div>        
@@ -100,9 +100,14 @@
   <script src="./static/js/controller.js"></script>
 
 
-   <!-- pNotify JS File -->
-   <script src="./static/js/pnotify.custom.min.js"></script>
-   <script src="./static/js/angular-pnotify.js"></script>
+  <!-- pNotify JS File -->
+  <script src="./static/js/pnotify.custom.min.js"></script>
+  <script src="./static/js/angular-pnotify.js"></script>
+
+
+
+  <!-- Recaptcha -->
+  <script src='https://www.google.com/recaptcha/api.js'></script>
 
   <!-- Track Google Analytics Actions -->
   <script type="text/javascript">  
