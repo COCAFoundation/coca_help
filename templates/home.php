@@ -5,110 +5,108 @@
   <meta name="google-site-verification" content="bo4VH478YFeWvahD1hAmX2m1ukQg4HkATGRY9LgvRjw" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="../static/css/system.css" type="text/css" />
-    <link rel="stylesheet" href="../static/css/general.css" type="text/css" />
-    <link href="./static/css/bootstrap.min.css" rel="stylesheet" media="screen"/>
-    <link href="./static/css/default.css" rel="stylesheet" />  
-    <link href="./static/css/powerRotator.css" rel="stylesheet" media="screen"/>
-    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400|Rokkitt|Josefin+Slab:300,400|Karla' rel='stylesheet' type='text/css'>
+  <!-- Bootstrap 3 CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <!-- Bootstrap 3 Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
 
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script> 
-    <script src="./static/js/bootstrap.min.js"></script>
-    <meta name="google-translate-customization" content="cdf027e5440b9c8f-cb40fc80eac9fe21-g025a20baa11a5cbc-19"></meta>
-    </head>
-<body>
-  <nav class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navigation">
-   <div class="container-fluid">
-      <!-- Navbar Header -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-      </div>          
-         
-      <!-- Everything you want hidden at 940px or less, place within here -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav" id="top-nav-menu">
-            <jdoc:include type="modules" name="navbar" style="xhtml" />
-          </ul>
-          <form action="/search" method="post" class="navbar-form navbar-left pull-right" >
-              <div class="form-group"> 
-                <input name="searchword" id="mod-search-searchword" maxlength="20"  class="inputbox form-control search-query" type="text" size="20" value="Search..."  onblur="if (this.value=='') this.value='Search...';" onfocus="if (this.value=='Search...') this.value='';" />
-              </div>
-              <input type="hidden" name="task" value="search" />
-              <input type="hidden" name="option" value="com_search" />
-              <input type="hidden" name="Itemid" value="479" />
-           </form>
-      </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-  </nav>    
+
+  <!-- Custom CSS -->
+  <link href="./static/css/system.css" rel="stylesheet" type="text/css" />
+  <link href="./static/css/general.css" rel="stylesheet" type="text/css" />
+  <link href="./static/css/default.css" rel="stylesheet" type="text/css" />   
+
+  <!-- Pnotify CSS -->
+  <link href="./static/css/pnotify.custom.min.css" rel="stylesheet" type="text/css" /> 
+
+
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400|Rokkitt|Josefin+Slab:300,400|Karla' rel='stylesheet' type='text/css'>
+
+  <meta name="google-translate-customization" content="cdf027e5440b9c8f-cb40fc80eac9fe21-g025a20baa11a5cbc-19"></meta>
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+</head>
+<body ng-app="myApp">   
   <div class="container ctr" style="background:#fff;">
     <div class="cleafix" style="height:55px;">&nbsp;</div>
       <div class="row banner">           
           <div class="row banner-left hidden-sm hidden-xs"></div>           
           <div class="col-md-7 col-sm-7 col-xs-7">
             <a href="/">
-              <img src="../static/images/logo_1.png" class="img-responsive" alt="Children of Central Asia Foundation"/>
+              <img src="./static/images/logo_1.png" class="img-responsive" alt="Children of Central Asia Foundation"/>
             </a>
           </div>
           <div class="col-md-4 col-sm-4 col-xs-4">
              <div class="social-bar"> 
                 <a href="http://www.facebook.com/COCAFoundation" target="_blank" class="">
-                    <img src="../static/images/social-icons-32x32/facebook.png" alt="Children of Central Asia Foundation"/>
+                    <img src="./static/images/social-icons-32x32/facebook.png" alt="Children of Central Asia Foundation"/>
                 </a>
                 <a href="https://twitter.com/cocafoundation" target="_blank" class="">
-                    <img src="../static/images/social-icons-32x32/twitter.png" alt="Children of Central Asia Foundation"/>
+                    <img src="./static/images/social-icons-32x32/twitter.png" alt="Children of Central Asia Foundation"/>
                 </a>
                 <a href="http://www.youtube.com/cocafoundation" target="_blank" class="">
-                    <img src="../static/images/social-icons-32x32/youtube.png" alt="Children of Central Asia Foundation"/>
+                    <img src="./static/images/social-icons-32x32/youtube.png" alt="Children of Central Asia Foundation"/>
                 </a>
                 <a href="http://www.flickr.com/photos/cocafoundation/" target="_blank" class="">
-                    <img src="../static/images/social-icons-32x32/flickr.png" alt="Children of Central Asia Foundation"/>
-                </a>
-               <a href="http://feeds.feedburner.com/childrenofcentralasia/PlJX" target="_blank" class="">
-                    <img src="../static/social-icons-32x32/rss.png" alt="RSS Logo"/>
+                    <img src="./static/images/social-icons-32x32/flickr.png" alt="Children of Central Asia Foundation"/>
                 </a>
             </div>
-<div class="clearfix">&nbsp;</div>
-            <div class="pull-right"><div id="google_translate_element"></div><script type="text/javascript">
-function googleTranslateElementInit() {
-  new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, gaTrack: true, gaId: 'UA-35817130-1'}, 'google_translate_element');
-}
-            </script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script></div>            
-            <jdoc:include type="modules" name="banner-right" style="xhtml" />
+        <div class="clearfix">&nbsp;</div>
         </div>
         <div class="row banner-right hidden-sm hidden-xs"></div>   
         </div>
-        <div class="row banner-bottom hidden-sm hidden-xs"></div>    
-    </div>                    
+        <div class="row banner-bottom hidden-sm hidden-xs"></div> 
+        <div class="row">
+          <div class="col-md-12">                  
+            <!-- ANGULAR VIEW-FRAME -->
+            <div ng-view class="view-frame"></div></div>
+        </div>        
+    </div>               
 </div>
-    <div class="container ftr">
-      <div class="row">
-        <div class="col-md-12" style="padding-top:5px;"><jdoc:include type="modules" name="footer" style="xhtml" /></div>
-      </div>
 
+  <div class="container ftr">
+    <div class="row">
+      <div class="col-md-12" style="padding-top:5px;">
+        <div class="custom">
+          <div class="col-md-4 col-md-offset-8"><address><strong>Children of Central Asia Foundation, Inc.</strong><br> PO Box 2611<br> Falls Church VA, 22042<br> <abbr title="Phone">Phone:</abbr> <strong>1 (888) 954-6616</strong><br> <abbr title="Email">Email:</abbr> <a style="color: #0088cc;" href="mailto:info@childrenofcentralasia.org">info@childrenofcentralasia.org</a></address></div>
+        </div>
+      </div>
     </div>
+  </div>
 
     <div class="container">
       <div class="clearfix" style="height:6px;"></div>
-      <div class="row">
-          <div class="col-md-12"><span id="copyright"><jdoc:include type="modules" name="copyright" style="xhtml" /></span></div>
-      </div>
-      <div class="clearfix" style="height:6px;"></div>
     </div>
-   <script type="text/javascript">
-      (function($){   
-        $(window).load(function(){
-          // dropdown
-          $('.deeper > a').addClass('dropdown-toggle');
-          $('.deeper > a').attr('data-toggle', 'dropdown');
-          $('.deeper > a').append('<b class="caret"></b>');
-          $('.nav-child > .divider-vertical').addClass('divider');    
-          $('.nav-child > .divider').removeClass('divider-vertical');  
-        });   
+
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+  <!-- Latest compiled and minified JavaScript for Bootstrap -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+  <!-- Latest compiled and minified JavaScript for AngularJS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular-resource.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular-route.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular-animate.min.js"></script>
+
+  <!-- 2Weeks AngularJS Files -->
+  <script src="./static/js/app.js"></script>
+  <script src="./static/js/controller.js"></script>
+
+
+   <!-- pNotify JS File -->
+   <script src="./static/js/pnotify.custom.min.js"></script>
+   <script src="./static/js/angular-pnotify.js"></script>
+
+  <!-- Track Google Analytics Actions -->
+  <script type="text/javascript">  
+    (function($){   
         $(document).ready(function($) {
           //alert('hello world');
           var filetypes = /\.(zip|exe|pdf|doc*|xls*|ppt*|mp3)$/i;
@@ -147,6 +145,6 @@ function googleTranslateElementInit() {
           });
         });
       })(jQuery);
-	</script>
+  </script>
 </body>
 </html>

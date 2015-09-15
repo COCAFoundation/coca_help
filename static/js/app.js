@@ -1,36 +1,25 @@
 'use strict';
 
-
-var billsApp = angular.module('billsApp', [
+var myApp = angular.module('myApp', [
     'ngRoute',
-    'billsAppControllers',
-    'menuBarAppControllers',
-    'jlareau.pnotify',
-    'dbServices'
-]);
-
-
-var loginApp = angular.module('loginApp', [
-    'ngRoute',
-    'loginAppControllers',
-    'loginServices',
+    'appControllers',
     'jlareau.pnotify'
 ]);
 
 
-loginApp.config(['$routeProvider', function($routeProvider) {
+myApp.config(['$routeProvider', function($routeProvider) {
     $routeProvider.
-    when('/login', {
-        templateUrl: '/static/partials/loginAppLoginView.html',
-        controller: 'loginAppLoginController'
+    when('/form', {
+        templateUrl: './static/partials/form.html',
+        controller: 'formController'
     }).
-    when('/register', {
-        templateUrl: '/static/partials/loginAppRegisterView.html',
-        controller: 'loginAppRegisterController'
+    when('/success', {
+        templateUrl: './static/partials/success.html',
+        controller: 'formController'
     }).
     otherwise({
-        templateUrl: '/static/partials/loginAppLoginView.html',
-        controller: 'loginAppLoginController'
+        templateUrl: './static/partials/form.html',
+        controller: 'formController'
     });
 }]);
 
@@ -63,30 +52,5 @@ dbServices.factory('User', ['$resource',
   }]);
 
 
-dbServices.factory('Bill', ['$resource',
-  function($resource){
-    return $resource('/api/bill/:billId', {}, {
-      'query': {method:'GET', isArray:false},
-      'get': {method:'GET', params:{userId:'bills'}, isArray:false},
-      'save': {method:'POST', isArray:false},
-      'delete': {method:'DELETE', isArray:false},
-      'put': {method:'PUT', isArray:false}
-    });
-  }]);
-
-
-
-/******************
-*  Login Services *
-******************/
-
-var loginServices = angular.module('loginServices', ['ngResource']);
-
-loginServices.factory('Login', ['$resource',
-  function($resource){
-    return $resource('/api/login/', {}, {
-      'save': {method:'POST', headers: {'Content-Type': 'application/x-www-form-urlencoded'}, isArray:false}
-    });
-  }]);
 
 
