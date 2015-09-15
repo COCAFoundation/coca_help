@@ -1,0 +1,56 @@
+/**
+ * @copyright	Copyright (C) 2005 - 2014 Open Source Matters, Inc. All rights reserved.
+ * @license		GNU General Public License version 2 or later; see LICENSE.txt
+ */
+
+/* Start Common Styles */
+
+html {
+	height: 100%;
+	margin-bottom: 1px;
+}
+
+body {
+	margin: 0px;
+	padding: 0px;
+	height: 100%;
+	margin-bottom: 1px;
+	font-family: helvetica, arial, sans-serif;
+	padding-top: 0px;
+	margin-top: 0px;
+  background:  #5a6d7f; /* Old browsers */
+  position: relative;
+  min-height: 100%;
+}
+}
+
+h1,
+h2,
+h3,
+h4 {
+  text-shadow: 1px 1px 1px rgba(150, 150, 150, 0.5);
+}
+
+.error {
+}
+}
+
+table, td, th, div, pre, blockquote, ul, ol, dl, address,.componentheading,.contentheading,.contentpagetitle,.sectiontableheader,.newsfeedheading {
+}
+
+.errorboxoutline {
+	border-color: #ddd;
+	border-width: 1px;
+	border-radius: 4px 4px 0 0;
+	border-style: solid;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+.errorboxheader {
+	background: #E44249;
+	color: #FFFFFF;
+	font-weight: bold;
+	font-size: 12px;
+	line-height: 22px;
+	text-align: center;
+}
