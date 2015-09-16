@@ -20,8 +20,6 @@
   <link href="./static/css/pnotify.custom.min.css" rel="stylesheet" type="text/css" /> 
 
 
-  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400|Rokkitt|Josefin+Slab:300,400|Karla' rel='stylesheet' type='text/css'>
-
   <meta name="google-translate-customization" content="cdf027e5440b9c8f-cb40fc80eac9fe21-g025a20baa11a5cbc-19"></meta>
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -84,7 +82,7 @@
     </div>
 
   <!-- Include all compiled plugins (below), or include individual files as needed -->
-  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 
   <!-- Latest compiled and minified JavaScript for Bootstrap -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
