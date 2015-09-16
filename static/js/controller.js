@@ -6,12 +6,14 @@
 
     appControllers.controller("formController",['$scope', '$http', '$routeParams', '$location', 'Form', 'notificationService', function($scope, $http, transformRequestAsFormPost, $location, Form, notificationService) {
         $scope.submit = function() {
-            var formData = $scope.entry;
-            console.log(formData);
+            if ($scope.aidForm.$valid && typeof $scope.entry !== 'undefined'){
+            	notificationService.success("Form Submitted!");
+	            Form.save($.param($scope.entry));
+	            //$location.path( "/success");        
+            }else{
+            	notificationService.error('Please check the form for errors');
+            }
 
-            notificationService.success(formData.name);
-            Form.save($.param(formData));
-            //$location.path( "/success");
         };
     }]);
 

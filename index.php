@@ -35,9 +35,6 @@ $mail->Password   = 'L33tp$$wrD';        // SMTP account password example
 $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
 $mail->Port = 587;                                    // TCP port to connect to
 
-$mail->From = 'davidlarrimore@childrenofcentralasia.org';
-$mail->FromName = 'Mailer';
-$mail->addAddress('davidlarrimore@childrenofcentralasia.org', 'Test');     // Add a recipient
 //$mail->addAddress('ellen@example.com');               // Name is optional
 //$mail->addReplyTo('info@example.com', 'Information');
 //$mail->addCC('cc@example.com');
@@ -74,7 +71,7 @@ $app->get('/', function () use ($app) {
 
 $app->post('/api/send_email', function () use ($app, $mail) {
     //Create book
-    $paramValue = $app->request->params('name');
+    $name = $app->request->params('name');
     $app->response->setStatus(201);
 
 
@@ -82,7 +79,11 @@ $app->post('/api/send_email', function () use ($app, $mail) {
 //response (required) The value of 'g-recaptcha-response'.
 //remoteip    The end user's ip address.
 
-    $mail->Subject = 'Here is the subject';
+
+    $mail->From = 'davidlarrimore@childrenofcentralasia.org';
+    $mail->FromName = 'Mailer';
+    $mail->addAddress('davidlarrimore@childrenofcentralasia.org', 'Test');     // Add a recipient
+    $mail->Subject = 'Aid Request Submitted';
     $mail->Body    = 'This is the HTML message body <b>in bold!</b>';
     $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 

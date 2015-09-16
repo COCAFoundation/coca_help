@@ -62,7 +62,7 @@
         </div>
         <div class="row banner-bottom hidden-sm hidden-xs"></div> 
         <div class="row">
-          <div class="col-md-6 col-md-offset-3">                  
+          <div class="col-md-12">                  
             <!-- ANGULAR VIEW-FRAME -->
             <div ng-view class="view-frame"></div></div>
         </div>        
