@@ -4,7 +4,8 @@ var myApp = angular.module('myApp', [
     'ngRoute',
     'appControllers',
     'jlareau.pnotify',
-    'formService'
+    'formService',
+    'ngCookies'
 ]);
 
 

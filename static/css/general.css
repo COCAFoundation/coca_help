@@ -121,125 +121,6 @@ a img.calendar {
         vertical-align: middle;
 }
 
-/* System Messages */
-
-.error
-{
-        padding:0px;
-        margin-bottom: 20px;
-}
-
-.error h2
-{
-        color:#000 !important;
-        font-size:1.4em !important;
-        text-transform:uppercase;
-        padding:0 0 0 0px !important
-}
-
-#system-message
-{
-                margin:10px 0 20px 0;
-                border-left:0;
-                border-right:0;
-}
-
-#system-message dt
-{
-	font-weight: bold;
-}
-#system-message dd
-{
-	margin: 0 0 15px 0;
-	font-weight: bold;
-	text-indent: 0px;
-	padding:0
-}
-#system-message dd ul
-{
-	color: #000;
-	list-style: none;
-	padding: 0px;
-}
-#system-message dd ul li
-{
-	line-height:1.5em
-}
-
-/* System Standard Messages */
-#system-message dt.message
-{
-	position:absolute;
-	top:-2000px;
-	left:-3000px;
-}
-
-#system-message dd.message  ul
-{
-	background: #fff  url(../images/system/notice-info.png) no-repeat;
-	padding-left:40px;
-	padding: 10px 10px 10px 40px;
-	border: 2px solid #90B203;
-	border-radius:10px
-}
-
-#system-message dd.message ul li{background:none !important}
-
-/* System Error Messages */
-#system-message dt.error
-{
-	position:absolute;
-	top:-2000px;
-	left:-3000px;
-}
-
-#system-message dd.error ul
-{
-	background:#fff url(../images/system/notice-alert.png) no-repeat ;
-	padding-left:40px;
- 	padding: 10px 10px 10px 40px;
-    border: 2px solid #990000;
-	border-radius:10px
-
-}
-
-
-
-/* System Notice Messages */
-#system-message dt.notice
-{
-	position:absolute;
-	top:-2000px;
-	left:-3000px;
-}
-
-#system-message dd.notice  ul
-{
-		background:#fff url(../images/system/notice-note.png) no-repeat ;
-		padding-left:40px;
-	    padding: 10px 10px 10px 40px;
-	    border: 2px solid #FAA528;
-		border-radius:10px
-
-}
-#system-message dd.notice ul { color: #000;margin:10px 0 }
-
-#system-message
-{
-    margin-bottom: 0px;
-    padding: 0;
-}
-
-#system-message dt
-{
-    font-weight: bold;
-}
-
-#system-message dd
-{
-    font-weight: bold;
-    padding: 0;
-}
 
 
 .tip-wrap { background:#FEFDE2; font-size:0.8em ; padding:5px; border:solid 1px #ddd; border-radius:3px; box-shadow: 0 1px 5px #ccc }
@@ -310,6 +191,9 @@ span.optional
 {font-size:0.9em}
 
 
-
+.centered
+{
+    text-align:center;
+}
 
 

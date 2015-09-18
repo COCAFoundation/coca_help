@@ -18,11 +18,10 @@ require 'PHPMailer/PHPMailerAutoload.php';
 
 
 
-/*
-*
-* PHP Mailer SEtup
-*
-*/
+/*******************
+* PHP Mailer Setup *
+*******************/
+
 $mail = new PHPMailer;
 
 //$mail->SMTPDebug = 3;                               // Enable verbose debug output

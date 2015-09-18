@@ -1,147 +1,148 @@
-<div class="row">
-	<div class="col-md-10 col-md-offset-1">
-	<h2>Aid Request Application</h2>
-	<p>Everyday the Children of Central Asia Foundation works to.....</p>
+<section>
+	<div class="row">
+		<div class="col-md-10 col-md-offset-1">
+		<h2>Aid Request Application</h2>
+		<p>Everyday the Children of Central Asia Foundation works to.....</p>
+		</div>
 	</div>
-</div>
-<div class="clearfix" style="height:32px;"></div>
-<div class="row">
-	<div class="col-md-8 col-md-offset-2">
-		<div class="panel panel-default">
-			<div class="panel-heading">Please complete the following</div>
-			<div class="panel-body">
-				<form id="aidForm" class="form-horizontal" name="aidForm" ng-controller="formController" ng-submit="submit()" role="form" novalidate>
-				  <h4>1. Organization Details (If you are an individual, please give personal information).</h4>
-				  
-				  <hr/>
+	<div class="clearfix" style="height:32px;"></div>
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
+			<div class="panel panel-default">
+				<div class="panel-heading">Please complete the following</div>
+				<div class="panel-body">
+					<form id="aidForm" class="form-horizontal" name="aidForm" role="form" novalidate>
+					  <h4>1. Organization Details (If you are an individual, please give personal information).</h4>
+					  
+					  <hr/>
 
 
-				  <div class="form-group" ng-class="{ 'has-error' : aidForm.uOrgName.$error.required && (aidForm.$submitted || aidForm.uOrgName.$touched), 'has-success' : !aidForm.uOrgName.$error.required && (aidForm.$submitted || aidForm.uOrgName.$touched)}">
-				    <label for="uOrgName" class="col-sm-3 control-label">Organization Name</label>
-				    <div class="col-sm-6">
-					    <input type="text" name="uOrgName" class="form-control" ng-model="entry.org_name" placeholder="Organization Name" required>
-					    <span ng-show="aidForm.uOrgName.$error.required && (aidForm.$submitted || aidForm.uOrgName.$touched)" class="help-block">Organization Name is Required</span>
-				    </div>
-				  </div>
-
-
-				  <div class="form-group" ng-class="{ 'has-error' : aidForm.uAddress.$error.required && (aidForm.$submitted || aidForm.uAddress.$touched), 'has-success' : !aidForm.uAddress.$error.required && (aidForm.$submitted || aidForm.uAddress.$touched)}">
-				    <label for="uAddress" class="col-sm-3 control-label">Full Address</label>
-				    <div class="col-sm-9">
-					    <textarea rows="3" name="uAddress" class="form-control" ng-model="entry.address" placeholder="Please enter full address" required></textarea>
-					    <span ng-show="aidForm.uAddress.$error.required && (aidForm.$submitted || aidForm.uAddress.$touched)" class="help-block">Address is Required</span>
-				    </div>
-				  </div>
-
-
-
-				  <div class="form-group" ng-class="{'has-success' : aidForm.$submitted || aidForm.uWebsite.$touched}">
-				    <label for="uWebsite" class="col-sm-3 control-label">Website</label>
-				    <div class="col-sm-9">
-					    <input type="text" name="uWebsite" class="form-control" ng-model="entry.website" placeholder="Website URL">
-				    </div>
-				  </div>
-
-				  <br/>
-
-				  <h4>2. Contact Information</h4>
-				  
-				  <hr/>
-
-
-
-				  <div class="form-group" ng-class="{ 'has-error' : aidForm.uFirstName.$error.required && (aidForm.$submitted || aidForm.uFirstName.$touched), 'has-success' : !aidForm.uFirstName.$error.required && (aidForm.$submitted || aidForm.uFirstName.$touched)}">
-				    <label for="uFirstName" class="col-sm-3 control-label">First Name</label>
-				    <div class="col-sm-3">
-					    <input type="text" name="uFirstName" class="form-control" ng-model="entry.first_name" placeholder="First Name" required>
-					    <span ng-show="aidForm.uFirstName.$error.required && (aidForm.$submitted || aidForm.uFirstName.$touched)" class="help-block">First Name is Required</span>
-				    </div>
-				  </div>
-
-
-
-				  <div class="form-group" ng-class="{ 'has-error' : aidForm.uLastName.$error.required && (aidForm.$submitted || aidForm.uLastName.$touched), 'has-success' : !aidForm.uLastName.$error.required && (aidForm.$submitted || aidForm.uLastName.$touched)}">
-				    <label for="uLastName" class="col-sm-3 control-label">Last Name</label>
-				    <div class="col-sm-5">
-					    <input type="text" name="uLastName" class="form-control" ng-model="entry.last_name" placeholder="Last Name" required>
-					    <span ng-show="aidForm.uLastName.$error.required && (aidForm.$submitted || aidForm.uLastName.$touched)" class="help-block">Last Name is Required</span>
-				    </div>
-				  </div>
-
-
-
-				  <div class="form-group" ng-class="{ 'has-error' : aidForm.uPhone.$error.required && (aidForm.$submitted || aidForm.uPhone.$touched), 'has-success' : !aidForm.uPhone.$error.required && (aidForm.$submitted || aidForm.uPhone.$touched)}">
-				    <label for="uPhone" class="col-sm-3 control-label">Phone Number</label>
-				    <div class="col-sm-3">
-					    <input type="text" name="uPhone" class="form-control" ng-model="entry.phone" placeholder="Phone Number" required>
-					    <span ng-show="aidForm.uPhone.$error.required && (aidForm.$submitted || aidForm.uPhone.$touched)" class="help-block">Phone number is Required</span>
-				    </div>
-				  </div>
-
-
-
-				  <div class="form-group" ng-class="{ 'has-error' : aidForm.uEmail.$error.required && (aidForm.$submitted || aidForm.uEmail.$touched), 'has-success' : !aidForm.uEmail.$error.required && (aidForm.$submitted || aidForm.uEmail.$touched)}">
-				    <label for="uEmail" class="col-sm-3 control-label">Email Address</label>
-				    <div class="col-sm-6">
-					    <input type="text" name="uEmail" class="form-control" ng-model="entry.email" placeholder="Email Address" required>
-					    <span ng-show="aidForm.uEmail.$error.required && (aidForm.$submitted || aidForm.uEmail.$touched)" class="help-block">Email is Required</span>
-				    </div>
-				  </div>
-
- 					
- 				  <br/>
-
-
-				  <h4>3. Proposal Request</h4>
-				  
-				  <hr/>
-
-
-
-				  <div class="form-group" ng-class="{ 'has-error' : aidForm.uProjectName.$error.required && (aidForm.$submitted || aidForm.uProjectName.$touched), 'has-success' : !aidForm.uProjectName.$error.required && (aidForm.$submitted || aidForm.uProjectName.$touched)}">
-				    <label for="uProjectName" class="col-sm-3 control-label">Program / Project Name</label>
-				    <div class="col-sm-4">
-					    <input type="text" name="uProjectName" class="form-control" ng-model="entry.project_name" placeholder="Program / Project Name" required>
-					    <span ng-show="aidForm.uProjectName.$error.required && (aidForm.$submitted || aidForm.uProjectName.$touched)" class="help-block">Program / Project Name is Required</span>
-				    </div>
-				  </div>
-
-
-
-
-				  <div class="form-group" ng-class="{ 'has-error' : aidForm.uCostEstimate.$error.required && (aidForm.$submitted || aidForm.uCostEstimate.$touched), 'has-success' : !aidForm.uCostEstimate.$error.required && (aidForm.$submitted || aidForm.uCostEstimate.$touched)}">
-				    <label for="uCostEstimate" class="col-sm-3 control-label">Estimated total cost of the project</label>
-				    <div class="col-sm-3">
-				    	<div class="input-group">
-					    	<div class="input-group-addon">$</div>
-					    	<input type="number" min="0" name="uCostEstimate" class="form-control" ng-model="entry.cost_estimate" required>
+					  <div class="form-group" ng-class="{ 'has-error' : aidForm.uOrgName.$error.required && (submitted || aidForm.uOrgName.$touched), 'has-success' : !aidForm.uOrgName.$error.required && (submitted || aidForm.uOrgName.$touched)}">
+					    <label for="uOrgName" class="col-sm-3 control-label" required>Organization Name</label>
+					    <div class="col-sm-6">
+						    <input type="text" name="uOrgName" class="form-control" ng-model="entry.org_name" placeholder="Organization Name" required>
+						    <span ng-show="aidForm.uOrgName.$error.required && (submitted || aidForm.uOrgName.$touched)" class="help-block">Organization Name is Required</span>
 					    </div>
-					    <span ng-show="aidForm.uCostEstimate.$error.required && (aidForm.$submitted || aidForm.uCostEstimate.$touched)" class="help-block">Cost estimate is Required</span>
-				    </div>
-				  </div>
+					  </div>
 
 
-
-				  <div class="form-group" ng-class="{ 'has-error' : aidForm.uGrantRequestAmount.$error.required && (aidForm.$submitted || aidForm.uGrantRequestAmount.$touched), 'has-success' : !aidForm.uGrantRequestAmount.$error.required && (aidForm.$submitted || aidForm.uGrantRequestAmount.$touched)}">
-				    <label for="uGrantRequestAmount" class="col-sm-3 control-label">Amount of grant requested</label>
-				    <div class="col-sm-3">
-				    	<div class="input-group">
-					    	<div class="input-group-addon">$</div>
-					    	<input type="number" min="0" name="uGrantRequestAmount" class="form-control" ng-model="entry.grant_request_amount"  required>
+					  <div class="form-group" ng-class="{ 'has-error' : aidForm.uAddress.$error.required && (submitted || aidForm.uAddress.$touched), 'has-success' : !aidForm.uAddress.$error.required && (submitted || aidForm.uAddress.$touched)}">
+					    <label for="uAddress" class="col-sm-3 control-label" required>Full Address</label>
+					    <div class="col-sm-9">
+						    <textarea rows="3" name="uAddress" class="form-control" ng-model="entry.address" placeholder="Please enter full address" required></textarea>
+						    <span ng-show="aidForm.uAddress.$error.required && (submitted || aidForm.uAddress.$touched)" class="help-block">Address is Required</span>
 					    </div>
-					    <span ng-show="aidForm.uGrantRequestAmount.$error.required && (aidForm.$submitted || aidForm.uGrantRequestAmount.$touched)" class="help-block">Grant amount is Required</span>
-				    </div>
-				  </div>
+					  </div>
+
+
+
+					  <div class="form-group" ng-class="{'has-success' : submitted || aidForm.uWebsite.$touched}">
+					    <label for="uWebsite" class="col-sm-3 control-label">Website</label>
+					    <div class="col-sm-9">
+						    <input type="text" name="uWebsite" class="form-control" ng-model="entry.website" placeholder="Website URL">
+					    </div>
+					  </div>
+
+					  <br/>
+
+					  <h4>2. Contact Information</h4>
+					  
+					  <hr/>
+
+
+
+					  <div class="form-group" ng-class="{ 'has-error' : aidForm.uFirstName.$error.required && (submitted || aidForm.uFirstName.$touched), 'has-success' : !aidForm.uFirstName.$error.required && (submitted || aidForm.uFirstName.$touched)}">
+					    <label for="uFirstName" class="col-sm-3 control-label" required>First Name</label>
+					    <div class="col-sm-3">
+						    <input type="text" name="uFirstName" class="form-control" ng-model="entry.first_name" placeholder="First Name" required>
+						    <span ng-show="aidForm.uFirstName.$error.required && (submitted || aidForm.uFirstName.$touched)" class="help-block">First Name is Required</span>
+					    </div>
+					  </div>
+
+
+
+					  <div class="form-group" ng-class="{ 'has-error' : aidForm.uLastName.$error.required && (submitted || aidForm.uLastName.$touched), 'has-success' : !aidForm.uLastName.$error.required && (submitted || aidForm.uLastName.$touched)}">
+					    <label for="uLastName" class="col-sm-3 control-label" required>Last Name</label>
+					    <div class="col-sm-5">
+						    <input type="text" name="uLastName" class="form-control" ng-model="entry.last_name" placeholder="Last Name" required>
+						    <span ng-show="aidForm.uLastName.$error.required && (submitted || aidForm.uLastName.$touched)" class="help-block">Last Name is Required</span>
+					    </div>
+					  </div>
+
+
+
+					  <div class="form-group" ng-class="{ 'has-error' : aidForm.uPhone.$error.required && (submitted || aidForm.uPhone.$touched), 'has-success' : !aidForm.uPhone.$error.required && (submitted || aidForm.uPhone.$touched)}">
+					    <label for="uPhone" class="col-sm-3 control-label" required>Phone Number</label>
+					    <div class="col-sm-3">
+						    <input type="text" name="uPhone" class="form-control" ng-model="entry.phone" placeholder="Phone Number" required>
+						    <span ng-show="aidForm.uPhone.$error.required && (submitted || aidForm.uPhone.$touched)" class="help-block">Phone number is Required</span>
+					    </div>
+					  </div>
+
+
+
+					  <div class="form-group" ng-class="{ 'has-error' : aidForm.uEmail.$error.required && (submitted || aidForm.uEmail.$touched), 'has-success' : !aidForm.uEmail.$error.required && (submitted || aidForm.uEmail.$touched)}">
+					    <label for="uEmail" class="col-sm-3 control-label" required>Email Address</label>
+					    <div class="col-sm-6">
+						    <input type="text" name="uEmail" class="form-control" ng-model="entry.email" placeholder="Email Address" required>
+						    <span ng-show="aidForm.uEmail.$error.required && (submitted || aidForm.uEmail.$touched)" class="help-block">Email is Required</span>
+					    </div>
+					  </div>
+
+	 					
+	 				  <br/>
+
+
+					  <h4>3. Proposal Request</h4>
+					  
+					  <hr/>
+
+
+
+					  <div class="form-group" ng-class="{ 'has-error' : aidForm.uProjectName.$error.required && (submitted || aidForm.uProjectName.$touched), 'has-success' : !aidForm.uProjectName.$error.required && (submitted || aidForm.uProjectName.$touched)}">
+					    <label for="uProjectName" class="col-sm-3 control-label" required>Program / Project Name</label>
+					    <div class="col-sm-4">
+						    <input type="text" name="uProjectName" class="form-control" ng-model="entry.project_name" placeholder="Program / Project Name" required>
+						    <span ng-show="aidForm.uProjectName.$error.required && (submitted || aidForm.uProjectName.$touched)" class="help-block">Program / Project Name is Required</span>
+					    </div>
+					  </div>
 
 
 
 
-				  <div class="form-group" ng-class="{ 'has-success' : !aidForm.uOtherAssistance.$error.required && (aidForm.$submitted || aidForm.uOtherAssistance.$touched)}">
-				    <label for="uOtherAssistance" class="col-sm-3 control-label">Assistance requested other than monetary</label>
-				    <div class="col-sm-9">
-					    <textarea rows="3" name="uOtherAssistance" class="form-control" ng-model="entry.other_assistance" placeholder="Oher Assistance"></textarea>
-				    </div>
-				  </div>
+					  <div class="form-group" ng-class="{ 'has-error' : aidForm.uCostEstimate.$error.required && (submitted || aidForm.uCostEstimate.$touched), 'has-success' : !aidForm.uCostEstimate.$error.required && (submitted || aidForm.uCostEstimate.$touched)}">
+					    <label for="uCostEstimate" class="col-sm-3 control-label" required>Estimated total cost of the project</label>
+					    <div class="col-sm-3">
+					    	<div class="input-group">
+						    	<div class="input-group-addon">$</div>
+						    	<input type="number" min="0" name="uCostEstimate" class="form-control" ng-model="entry.cost_estimate" required>
+						    </div>
+						    <span ng-show="aidForm.uCostEstimate.$error.required && (submitted || aidForm.uCostEstimate.$touched)" class="help-block">Cost estimate is Required</span>
+					    </div>
+					  </div>
+
+
+
+					  <div class="form-group" ng-class="{ 'has-error' : aidForm.uGrantRequestAmount.$error.required && (aidForm.uGrantRequestAmount.$touched), 'has-success' : !aidForm.uGrantRequestAmount.$error.required && (submitted || aidForm.uGrantRequestAmount.$touched)}">
+					    <label for="uGrantRequestAmount" class="col-sm-3 control-label" required>Amount of grant requested</label>
+					    <div class="col-sm-3">
+					    	<div class="input-group">
+						    	<div class="input-group-addon">$</div>
+						    	<input type="number" min="0" name="uGrantRequestAmount" class="form-control" ng-model="entry.grant_request_amount"  required>
+						    </div>
+						    <span ng-show="aidForm.uGrantRequestAmount.$error.required && (submitted || aidForm.uGrantRequestAmount.$touched)" class="help-block">Grant amount is Required</span>
+					    </div>
+					  </div>
+
+
+
+
+					  <div class="form-group" ng-class="{ 'has-success' : !aidForm.uOtherAssistance.$error.required && (submitted || aidForm.uOtherAssistance.$touched)}">
+					    <label for="uOtherAssistance" class="col-sm-3 control-label">Assistance requested other than monetary</label>
+					    <div class="col-sm-9">
+						    <textarea rows="3" name="uOtherAssistance" class="form-control" ng-model="entry.other_assistance" placeholder="Oher Assistance"></textarea>
+					    </div>
+					  </div>
 
 
 
@@ -149,18 +150,24 @@
 
 
 
-				  <!-- RECAPTCHA -->
-				  <!--
-				  <div class="form-group">
-				  		<label for="recaptcha">Are you Human?</label>
-				    	<div class="g-recaptcha" id="recaptcha" data-sitekey="6Leq3gwTAAAAAAJ4AndNEzrNc-bPMUYwA4Gh3vfC"></div>
-				  </div>
-				  -->
-
-				  <button type="submit" class="btn btn-primary" ng-disabled="aidForm.$invalid">Submit</button>
-				</form>
+					  <!-- RECAPTCHA -->
+					  <!--
+					  <div class="form-group">
+					  		<label for="recaptcha">Are you Human?</label>
+					    	<div class="g-recaptcha" id="recaptcha" data-sitekey="6Leq3gwTAAAAAAJ4AndNEzrNc-bPMUYwA4Gh3vfC"></div>
+					  </div>
+					  -->
+					  <br>
+					  <hr/>
+					  <div class="centered">
+					    <button class="btn btn-primary btn-lg" ng-click="save()">Save</button>
+					    <button class="btn btn-warning btn-lg" ng-click="clear()">Clear</button>
+					  	<button type="submit" class="btn btn-primary btn-lg" ng-click="submit()" ng-disabled="aidForm.$invalid">Submit</button>
+					  </div>
+					</form>
+				</div>
 			</div>
 		</div>
 	</div>
-</div>
+</section>
 
