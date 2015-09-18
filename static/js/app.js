@@ -17,7 +17,7 @@ myApp.config(['$routeProvider', function($routeProvider) {
     }).
     when('/success', {
         templateUrl: './static/partials/success.html',
-        controller: 'formController'
+        controller: 'successController'
     }).
     otherwise({
         templateUrl: './static/partials/form.html',

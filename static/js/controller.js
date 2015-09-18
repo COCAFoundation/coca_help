@@ -2,7 +2,16 @@
 
     var appControllers = angular.module("appControllers", []);
 
+    appControllers.controller('successController', ['$scope', '$http', '$routeParams', '$location', '$cookies', function($scope, $http, transformRequestAsFormPost, $location, $cookies) {
+    	
+        $scope.newApplication = function() {
+			$cookies.remove('entry');
+			$scope.entry = null;
+        	$location.path( "/form"); 
+        };
 
+
+    }]);
 
     appControllers.controller("formController",['$scope', '$http', '$routeParams', '$location', 'Form', 'notificationService', '$cookies', function($scope, $http, transformRequestAsFormPost, $location, Form, notificationService, $cookies) {
         
@@ -28,15 +37,15 @@
         	notificationService.info("Submitting Form");
             if ($scope.aidForm.$valid && typeof $scope.entry !== 'undefined'){
             	console.log($scope.entry)
-	            Form.save($.param($scope.entry), function(data){
+	            Form.save($.param($scope.entry),$.param($scope.entry), function(data){
 	            	console.log(data);
-	   				if(data.error == null){
-	            		notificationService.success("Form Submitted Successfully");	   					
+	   				if(data.error == null || data.error == 'null'){
+	            		notificationService.success("Form Submitted Successfully");	 
+	            		 $location.path( "/success");   					
 	   				}else{
-	   					notificationService.success("There was an issue with the form, please contact info@childrenofcentralasia.org");
+	   					notificationService.success("There was an issue with the form, please contact info@childrenofcentralasia");
 	   				}
 	            });
-	            //$location.path( "/success"); 
             }else{
             	console.log($scope.aidForm.$error);
             	notificationService.error('Please check the form for errors');
