@@ -1,4 +1,16 @@
 /* not ready */
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+
+  .full button span {
+    background-color: limegreen;
+    border-radius: 32px;
+    color: black;
+  }
+  .partially button span {
+    background-color: orange;
+    border-radius: 32px;
+    color: black;
+  }
 
 /* -- form validation */
 .invalid { border-color: #B94A48;background:#F2DEDE}

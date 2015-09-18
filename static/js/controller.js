@@ -10,24 +10,35 @@
         console.log($cookies.getAll());
 
         if($cookies.get('entry')){
-        	console.log('Found Entry');
+        	console.log('Found saved form entry....loading');
         	console.log(angular.fromJson($cookies.get('entry')));
         	$scope.entry = angular.fromJson($cookies.get('entry'));
+        	$scope.entry.project_start_date = new Date($scope.entry.project_start_date);
+         	$scope.entry.project_end_date = new Date($scope.entry.project_end_date);       	
         	notificationService.success('Loaded Saved Form!');
         }else{
-        	console.log('No Entry Found');        	
+        	console.log('No saved form entry Found');        	
         }
 
 
         $scope.submit = function() {
+
         	$scope.submitted = true;
         	console.log('Submitting Form');
+        	notificationService.info("Submitting Form");
             if ($scope.aidForm.$valid && typeof $scope.entry !== 'undefined'){
             	console.log($scope.entry)
-            	notificationService.success("Form Submitted!");
-	            //Form.save($.param($scope.entry));
-	            //$location.path( "/success");        
+	            Form.save($.param($scope.entry), function(data){
+	            	console.log(data);
+	   				if(data.error == null){
+	            		notificationService.success("Form Submitted Successfully");	   					
+	   				}else{
+	   					notificationService.success("There was an issue with the form, please contact info@childrenofcentralasia.org");
+	   				}
+	            });
+	            //$location.path( "/success"); 
             }else{
+            	console.log($scope.aidForm.$error);
             	notificationService.error('Please check the form for errors');
             }
         };
