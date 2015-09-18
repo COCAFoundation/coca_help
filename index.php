@@ -73,29 +73,80 @@ $app->get('/', function () use ($app) {
 $app->post('/api/send_email', function () use ($app, $mail, $config_array) {
     //Create book
     
+
+    $address= $app->request->params('address');
+    $email= $app->request->params('email');
+    $first_name= $app->request->params('first_name');
+    $last_name= $app->request->params('last_name');
+    $org_name= $app->request->params('org_name');
+    $other_assistance= $app->request->params('other_assistance');
+    $phone= $app->request->params('phone');
+    $project_cost_estimate= $app->request->params('project_cost_estimate');
+    $project_description= $app->request->params('project_description');
+    $project_end_date= $app->request->params('project_end_date');
+    $project_expected_results= $app->request->params('project_expected_results');
+    $project_grant_amount_requested= $app->request->params('project_grant_amount_requested');
+    $project_name= $app->request->params('project_name');
+    $project_objectives= $app->request->params('project_objectives');
+    $project_other_assistance= $app->request->params('project_other_assistance');
+    $project_plan= $app->request->params('project_plan');
+    $project_start_date= $app->request->params('project_start_date');
+    $website= $app->request->params('website');
+
+
+
+    if (empty($address)){
+        $address = '';
+    }
+    if (empty($email)){
+        $email = '';
+    }    
+    if (empty($first_name)){
+        $first_name = '';
+    }
+    if (empty($last_name)){
+         $last_name = '';
+    }
+    if (empty($org_name)){
+        $org_name = '';
+    }
+    if (empty($other_assistance)){
+        $other_assistance = '';
+    }
+    if (empty($phone)){
+        $phone = '';
+    }
+    if (empty($project_cost_estimate)){
+        $project_cost_estimate = '';
+    }
+    if (empty($project_description)){
+        $project_description = '';
+    }
+    if (empty($project_end_date)){
+        $project_end_date = '';
+    }
+    if (empty($project_expected_results)){
+        $project_expected_results = '';
+    }
+    if (empty($project_grant_amount_requested)){
+        $project_grant_amount_requested = '';
+    }
+    if (empty($project_name)){
+        $project_name = '';
+    }
+    if (empty($project_objectives)){
+        $project_objectives = '';
+    }
+    if (empty($project_other_assistance)){
+        $project_other_assistance = '';
+    }
+    if (empty($project_start_date)){
+        $project_start_date = '';
+    }
+    if (empty($website)){
+        $website = '';
+    }        
     
-    $address= (empty($app->request->params('address')) ?  '' : $app->request->params('address'));
-    $email= (empty($app->request->params('email')) ?  '' : $app->request->params('email'));
-    $first_name= (empty($app->request->params('first_name')) ?  '' : $app->request->params('first_name'));
-    $last_name= (empty($app->request->params('last_name')) ?  '' : $app->request->params('last_name'));
-    $org_name= (empty($app->request->params('org_name')) ?  '' : $app->request->params('org_name'));
-    $other_assistance= (empty($app->request->params('other_assistance')) ?  '' : $app->request->params('other_assistance'));
-    $phone= (empty($app->request->params('phone')) ?  '' : $app->request->params('phone'));
-    $project_cost_estimate= (empty($app->request->params('project_cost_estimate')) ?  '' : $app->request->params('project_cost_estimate'));
-    $project_description= (empty($app->request->params('project_description')) ?  '' : $app->request->params('project_description'));
-    $project_end_date= (empty($app->request->params('project_end_date')) ?  '' : $app->request->params('project_end_date'));
-    $project_expected_results= (empty($app->request->params('project_expected_results')) ?  '' : $app->request->params('project_expected_results'));
-    $project_grant_amount_requested= (empty($app->request->params('project_grant_amount_requested')) ?  '' : $app->request->params('project_grant_amount_requested'));
-    $project_name= (empty($app->request->params('project_name')) ?  '' : $app->request->params('project_name'));
-    $project_objectives= (empty($app->request->params('project_objectives')) ?  '' : $app->request->params('project_objectives'));
-    $project_other_assistance= (empty($app->request->params('project_other_assistance')) ?  '' : $app->request->params('project_other_assistance'));
-    $project_plan= (empty($app->request->params('project_plan')) ?  '' : $app->request->params('project_plan'));
-    $project_start_date= (empty($app->request->params('project_start_date')) ?  '' : $app->request->params('project_start_date'));
-    $website= (empty($app->request->params('website')) ?  '' : $app->request->params('website'));
-
-
-    $app->response->setStatus(201);
-
 
     //secret (required)   6Leq3gwTAAAAAIXugq0ixQxHM4ZkFEDlq0WrSDGF
     //response (required) The value of 'g-recaptcha-response'.
@@ -107,7 +158,7 @@ $app->post('/api/send_email', function () use ($app, $mail, $config_array) {
     *****************/
     $mail->From = $config_array['from_email'];
     $mail->FromName = 'COCA Support';
-    $mail->addAddress('davidlarrimore@childrenofcentralasia.org', 'Test');     // Add a recipient
+    $mail->addAddress($config_array['coca_support_email'], 'COCA Team');     // Add a recipient
     $mail->Subject = 'New Aid Request Application: '.$app->request->params('project_name');
     //$mail->Body    = 'This is the HTML message body <b>in bold!</b>';
     //$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
@@ -176,15 +227,12 @@ $app->post('/api/send_email', function () use ($app, $mail, $config_array) {
         $app->response->setStatus(201);
     }
 
-    $app->response->write(json_encode($result));
+    $app->response->setBody(json_encode($result));
 
-
-
-
-
-   /****************
-    * EMAIL TO COCA *
-    *****************/
+   /*******************
+    * EMAIL TO PERSON *
+    *******************/
+    $mail->ClearAddresses();
     $mail->From = $config_array['from_email'];
     $mail->FromName = 'COCA Support';
     $mail->addAddress($email, $first_name.' '.$last_name);     // Add a recipient
@@ -255,22 +303,7 @@ $app->post('/api/send_email', function () use ($app, $mail, $config_array) {
 
 
 
-    $app->response->header('Content-Type', 'application/json');
-    //$app->contentType('application/json');
-
-
-    if(!$mail->send()) {
-        //echo 'Message could not be sent.';
-        $result = array('error' => 'Mailer Error: ' . $mail->ErrorInfo);
-        $app->response->setStatus(201);
-    } else {
-        $result = array('error' => null, 'data' => 'success');
-        $app->response->setStatus(201);
-    }
-
-
-
-
+    $mail->send();
 
 });
 
