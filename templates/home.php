@@ -86,12 +86,22 @@
   <!-- Latest compiled and minified JavaScript for Bootstrap -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/api-check/7.5.0/api-check.min.js"></script>
+
+
   <!-- Latest compiled and minified JavaScript for AngularJS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.6/angular.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.6/angular-resource.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.6/angular-route.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.6/angular-animate.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.6/angular-cookies.min.js"></script>
+
+
+  <!-- Angular-Formly -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-formly/7.1.1/formly.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-formly-templates-bootstrap/6.1.0/angular-formly-templates-bootstrap.min.js"></script>
+  
 
   <!-- 2Weeks AngularJS Files -->
   <script src="./static/js/app.js"></script>

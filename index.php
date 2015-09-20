@@ -74,7 +74,7 @@ $app->post('/api/send_email', function () use ($app, $mail, $config_array) {
     //Create book
     
 
-    $address= $app->request->params('address');
+    $organization_address= $app->request->params('organization_address');
     $email= $app->request->params('email');
     $first_name= $app->request->params('first_name');
     $last_name= $app->request->params('last_name');
@@ -91,12 +91,12 @@ $app->post('/api/send_email', function () use ($app, $mail, $config_array) {
     $project_other_assistance= $app->request->params('project_other_assistance');
     $project_plan= $app->request->params('project_plan');
     $project_start_date= $app->request->params('project_start_date');
-    $website= $app->request->params('website');
+    $organization_website= $app->request->params('organization_website');
 
 
 
-    if (empty($address)){
-        $address = '';
+    if (empty($organization_address)){
+        $organization_address = '';
     }
     if (empty($email)){
         $email = '';
@@ -143,8 +143,8 @@ $app->post('/api/send_email', function () use ($app, $mail, $config_array) {
     if (empty($project_start_date)){
         $project_start_date = '';
     }
-    if (empty($website)){
-        $website = '';
+    if (empty($organization_website)){
+        $organization_website = '';
     }        
     
 
@@ -183,8 +183,8 @@ $app->post('/api/send_email', function () use ($app, $mail, $config_array) {
                                         <h3>Organization Details</h3>
                                         <p>
                                             Organization Name: '.$org_name.'<br/>
-                                            Address: '.$address.'<br/>
-                                            Website: '.$website.'<br/>
+                                            Address: '.$organization_address.'<br/>
+                                            Website: '.$organization_website.'<br/>
                                         </p>
                                         <h3>Contact Information</h3>
                                         <p>
@@ -272,8 +272,8 @@ $app->post('/api/send_email', function () use ($app, $mail, $config_array) {
                                         <h3>Organization Details</h3>
                                         <p>
                                             Organization Name: '.$org_name.'<br/>
-                                            Address: '.$address.'<br/>
-                                            Website: '.$website.'<br/>
+                                            Address: '.$organization_address.'<br/>
+                                            Website: '.$organization_website.'<br/>
                                         </p>
                                         <h3>Contact Information</h3>
                                         <p>
