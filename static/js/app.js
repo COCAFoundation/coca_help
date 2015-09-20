@@ -22,7 +22,7 @@ myApp.config(['$routeProvider', function($routeProvider) {
         controller: 'successController'
     }).
     otherwise({
-        templateUrl: './static/partials/testForm.html',
+        templateUrl: './static/partials/form.html',
         controller: 'formController'
     });
 }]);

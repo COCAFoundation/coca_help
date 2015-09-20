@@ -68,9 +68,12 @@
           "placeholder": "First Name",
           "label": "First Name",
           "required": true
-        }
         },
-        {
+        "validation": {
+          "show": true
+        }
+      },
+      {
         "className": "col-xs-offset-1 col-xs-5",
         "type": "input",
         "key": "last_name",
@@ -79,7 +82,10 @@
           "placeholder": "Last Name",
           "label": "Last Name",
           "required": true
-        }
+        },
+         "validation": {
+          "show": true
+      	}
       }
     ]
   },
@@ -95,7 +101,10 @@
           "placeholder": "1-444-444-4444",
           "label": "Phone Number",
           "required": true
-        }
+        },
+         "validation": {
+          "show": true
+      	}
       },
       {
         "className": "col-xs-offset-1 col-xs-6",
@@ -106,7 +115,10 @@
           "placeholder": "myemail@myorganization.com",
           "label": "Email Address",
           "required": true
-        }
+        },
+         "validation": {
+          "show": true
+      	}
       }
     ]
   },
@@ -126,7 +138,10 @@
           "placeholder": "Program / Project Name",
           "label": "Program / Project Name",
           "required": true
-        }
+        },
+         "validation": {
+          "show": true
+      	}
       }
     ]
   },
@@ -144,7 +159,10 @@
           "addonLeft": {
           	"text":"$"
           }
-        }
+        },
+         "validation": {
+          "show": true
+      	}
       }
     ]
   },
@@ -162,7 +180,10 @@
           "addonLeft": {
           	"text":"$"
           }
-        }
+        },
+         "validation": {
+          "show": true
+      	}
       }
     ]
   },
@@ -195,7 +216,10 @@
           "placeholder": "What the project will be, what will happen, who will be involved, etc.",
           "label": "Description of the project",
           "required":true
-        }
+        },
+         "validation": {
+          "show": true
+      	}
       }
     ]
   },
@@ -212,7 +236,10 @@
           "placeholder": "Explain how the project meets the objectives of the community",
           "label": "Specific objective(s)",
           "required":true
-        }
+        },
+         "validation": {
+          "show": true
+      	}
       }
     ]
   },
@@ -229,7 +256,10 @@
           "placeholder": "As far as possible, the results must be measurable on the basis of criteria laid down for that purpose",
           "label": "Expected results and their use",
           "required":true
-        }
+        },
+         "validation": {
+          "show": true
+      	}
       }
     ]
   },
@@ -244,7 +274,10 @@
           "type": "date",
           "label": "Proposed Start Date",
           "required":true
-        }
+        },
+         "validation": {
+          "show": true
+      	}
       },
       {
         "className": "col-xs-offset-1 col-xs-4",
@@ -254,7 +287,10 @@
           "type": "date",
           "label": "Expected End Date",
           "required":true
-        }
+        },
+         "validation": {
+          "show": true
+      	}
       }
     ]
   },
@@ -269,8 +305,12 @@
           "type": "text",
           "rows": 3,
           "placeholder": "Detailed timetable and expenses for carrying out each stage of the project showing the main key dates and the objectives/expected results for each stage",
-          "label": "Project Plan"
-        }
+          "label": "Project Plan",
+          "required":true
+        },
+         "validation": {
+          "show": true
+      	}
       }
     ]
   }
