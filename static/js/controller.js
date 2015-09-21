@@ -114,7 +114,7 @@ appControllers.controller("formController",['$scope', '$http', '$routeParams', '
 
  	$http.get('./static/partials/form.json')
        .then(function(res){
-       	console.log(res.data);
+       	  //console.log(res.data);
           $scope.formFields = res.data;                
        });
 
