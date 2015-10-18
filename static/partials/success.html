@@ -1,18 +1,10 @@
-<section>
-	<h1>Thank you!</h1>
-	<p>
-	    The Children of Central Asia foundation would like to formally thank you for 
-	    submitting your application. Please expect several weeks for your application to be 
-	    processed. If your project is selected, COCA will reach out.
-	</p>
-	<p>
-	    Thanks again,
-	</p>
-	<p>
-	    John Griffin, Executive Director
-	</p>
+<section ngCloak>
+	<h1>{{text.thank_you_title}}</h1>
+	<p>{{text.thank_you_subtitle}}</p>
+	<p>{{text.thank_you_thanks_again}}</p>
+	<p>{{text.thank_you_signature_line}}</p>
 	<div class="centered">
-		<button class="btn btn-warning btn-lg" ng-click="newApplication()">Submit Another Application</button>
+		<button class="btn btn-warning btn-lg" ng-click="newApplication()">{{text.thank_you_submit_another_button}}</button>
 	</div>
 	<div class="clearfix" style="height:36px;"></div>
 </section>

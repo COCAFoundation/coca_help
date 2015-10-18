@@ -64,8 +64,17 @@ $app = new \Slim\Slim(array(
 ));
 
 
-
 $app->get('/', function () use ($app) {
+    $language = $app->request->get('language');
+    if (empty($language)){
+        $language = '';
+    }
+
+    $app->redirect('./home#/Language/'.$language);
+});
+
+
+$app->get('/home', function () use ($app) {
     $app->render('home.php');
 });
 
@@ -73,12 +82,11 @@ $app->get('/', function () use ($app) {
 $app->post('/api/send_email', function () use ($app, $mail, $config_array) {
     //Create book
     
-
     $organization_address= $app->request->params('organization_address');
     $email= $app->request->params('email');
     $first_name= $app->request->params('first_name');
     $last_name= $app->request->params('last_name');
-    $org_name= $app->request->params('org_name');
+    $organization_name= $app->request->params('organization_name');
     $other_assistance= $app->request->params('other_assistance');
     $phone= $app->request->params('phone');
     $project_cost_estimate= $app->request->params('project_cost_estimate');
@@ -107,8 +115,8 @@ $app->post('/api/send_email', function () use ($app, $mail, $config_array) {
     if (empty($last_name)){
          $last_name = '';
     }
-    if (empty($org_name)){
-        $org_name = '';
+    if (empty($organization_name)){
+        $organization_name = '';
     }
     if (empty($other_assistance)){
         $other_assistance = '';
@@ -159,7 +167,7 @@ $app->post('/api/send_email', function () use ($app, $mail, $config_array) {
     $mail->From = $config_array['from_email'];
     $mail->FromName = 'COCA Support';
     $mail->addAddress($config_array['coca_support_email'], 'COCA Team');     // Add a recipient
-    $mail->Subject = 'New Aid Request Application: '.$app->request->params('project_name');
+    $mail->Subject = 'New Aid Request Application: '.$project_name;
     //$mail->Body    = 'This is the HTML message body <b>in bold!</b>';
     //$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
@@ -182,7 +190,7 @@ $app->post('/api/send_email', function () use ($app, $mail, $config_array) {
                                         <h1>New Aid Request Submitted</h1>
                                         <h3>Organization Details</h3>
                                         <p>
-                                            Organization Name: '.$org_name.'<br/>
+                                            Organization Name: '.$organization_name.'<br/>
                                             Address: '.$organization_address.'<br/>
                                             Website: '.$organization_website.'<br/>
                                         </p>
@@ -236,7 +244,7 @@ $app->post('/api/send_email', function () use ($app, $mail, $config_array) {
     $mail->From = $config_array['from_email'];
     $mail->FromName = 'COCA Support';
     $mail->addAddress($email, $first_name.' '.$last_name);     // Add a recipient
-    $mail->Subject = 'Confirmation for COCA Aid Request Application: '.$app->request->params('project_name');
+    $mail->Subject = 'Confirmation for COCA Aid Request Application: '.$project_name;
     //$mail->Body    = 'This is the HTML message body <b>in bold!</b>';
     //$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
@@ -271,7 +279,7 @@ $app->post('/api/send_email', function () use ($app, $mail, $config_array) {
                                         <hr/>
                                         <h3>Organization Details</h3>
                                         <p>
-                                            Organization Name: '.$org_name.'<br/>
+                                            Organization Name: '.$organization_name.'<br/>
                                             Address: '.$organization_address.'<br/>
                                             Website: '.$organization_website.'<br/>
                                         </p>

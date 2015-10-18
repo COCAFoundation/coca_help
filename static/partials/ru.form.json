@@ -1,0 +1,317 @@
+[
+  {
+    "className": "section-label",
+    "template": "<h4>1. Информация об организации (Если вы частное лицо, пожалуйста, дайте личную информацию)</h4><hr />"
+  },
+  {
+    "className": "row",
+    "fieldGroup": [
+      {
+        "className": "col-xs-6",
+        "type": "input",
+        "key": "organization_name",
+        "templateOptions": {
+          "type": "text",
+          "placeholder": "Полное название организации",
+          "label": "Полное название организации"
+        },
+        "validation": {
+          "show": true
+        }
+      }
+    ]
+  },
+  {
+    "className": "row",
+    "fieldGroup": [
+      {
+        "className": "col-xs-6",
+        "type": "textarea",
+        "key": "organization_address",
+        "templateOptions": {
+          "type": "text",
+          "rows": 2,
+          "placeholder": "Organization Address",
+          "label": "Organization Address"
+        }
+      }
+    ]
+  },
+  {
+    "className": "row",
+    "fieldGroup": [
+      {
+        "className": "col-xs-8",
+        "type": "input",
+        "key": "organization_website",
+        "templateOptions": {
+          "type": "url",
+          "placeholder": "Корпоративный веб-сайт",
+          "label": "Корпоративный веб-сайт"
+        }
+      }
+    ]
+  },
+  {
+    "className": "section-label",
+    "template": "<br/><h4>2. Контактная информация: (необходимо)</h4><hr />"
+  },
+  {
+    "className": "row",
+    "fieldGroup": [
+      {
+        "className": "col-xs-3",
+        "type": "input",
+        "key": "first_name",
+        "templateOptions": {
+          "type": "text",
+          "placeholder": "Имя",
+          "label": "Имя",
+          "required": true
+        },
+        "validation": {
+          "show": true
+        }
+      },
+      {
+        "className": "col-xs-offset-1 col-xs-5",
+        "type": "input",
+        "key": "last_name",
+        "templateOptions": {
+          "type": "text",
+          "placeholder": "Фамилия",
+          "label": "Фамилия",
+          "required": true
+        },
+         "validation": {
+          "show": true
+      	}
+      }
+    ]
+  },
+  {
+    "className": "row",
+    "fieldGroup": [
+      {
+        "className": "col-xs-3",
+        "type": "input",
+        "key": "phone",
+        "templateOptions": {
+          "type": "phone",
+          "placeholder": "7-10-444-444-4444",
+          "label": "Контактный телефон",
+          "required": true
+        },
+         "validation": {
+          "show": true
+      	}
+      },
+      {
+        "className": "col-xs-offset-1 col-xs-6",
+        "type": "input",
+        "key": "email",
+        "templateOptions": {
+          "type": "email",
+          "placeholder": "Ел. Почта",
+          "label": "Ел. Почта",
+          "required": true
+        },
+         "validation": {
+          "show": true
+      	}
+      }
+    ]
+  },
+  {
+    "className": "section-label",
+    "template": "<br/><h4>3. Заказать услугу (необходимо)</h4><hr />"
+  },
+  {
+    "className": "row",
+    "fieldGroup": [
+      {
+        "className": "col-xs-6",
+        "type": "input",
+        "key": "project_name",
+        "templateOptions": {
+          "type": "text",
+          "placeholder": "Программа / Название проекта",
+          "label": "Программа / Название проекта",
+          "required": true
+        },
+         "validation": {
+          "show": true
+      	}
+      }
+    ]
+  },
+  {
+    "className": "row",
+    "fieldGroup": [
+      {
+        "className": "col-xs-4",
+        "type": "input",
+        "key": "project_cost_estimate",
+        "templateOptions": {
+          "type": "number",
+          "label": "Полная сметная стоимость проекта",
+          "required": true,
+          "addonLeft": {
+          	"text":"$"
+          }
+        },
+         "validation": {
+          "show": true
+      	}
+      }
+    ]
+  },
+  {
+    "className": "row",
+    "fieldGroup": [
+      {
+        "className": "col-xs-4",
+        "type": "input",
+        "key": "project_grant_amount_requested",
+        "templateOptions": {
+          "type": "number",
+          "label": "Сумма запрошенного гранта",
+          "required": true,
+          "addonLeft": {
+          	"text":"$"
+          }
+        },
+         "validation": {
+          "show": true
+      	}
+      }
+    ]
+  },
+  {
+    "className": "row",
+    "fieldGroup": [
+      {
+        "className": "col-xs-12",
+        "type": "textarea",
+        "key": "project_other_assistance",
+        "templateOptions": {
+          "type": "text",
+          "rows": 3,
+          "placeholder": "Запрошенная помощь, помимо материальной",
+          "label": "Запрошенная помощь, помимо материальной"
+        }
+      }
+    ]
+  },
+    {
+    "className": "row",
+    "fieldGroup": [
+      {
+        "className": "col-xs-12",
+        "type": "textarea",
+        "key": "project_description",
+        "templateOptions": {
+          "type": "text",
+          "rows": 6,
+          "placeholder": "Описание проекта (необходимо)",
+          "label": "Что представляет собой проект, что будет происходить, кто будет участвовать, и т.д.",
+          "required":true
+        },
+         "validation": {
+          "show": true
+      	}
+      }
+    ]
+  },
+    {
+    "className": "row",
+    "fieldGroup": [
+      {
+        "className": "col-xs-12",
+        "type": "textarea",
+        "key": "project_objectives",
+        "templateOptions": {
+          "type": "text",
+          "rows": 5,
+          "placeholder": "Конкретная цель (и)",
+          "label": "объясните, каким образом проект отвечает целям сообщества",
+          "required":true
+        },
+         "validation": {
+          "show": true
+      	}
+      }
+    ]
+  },
+    {
+    "className": "row",
+    "fieldGroup": [
+      {
+        "className": "col-xs-12",
+        "type": "textarea",
+        "key": "project_expected_results",
+        "templateOptions": {
+          "type": "text",
+          "rows": 5,
+          "placeholder": "насколько это возможно, результаты должны быть измеримыми на основе критериев, установленных для этой цели",
+          "label": "Ожидаемые результаты и их применение",
+          "required":true
+        },
+         "validation": {
+          "show": true
+      	}
+      }
+    ]
+  },
+    {
+    "className": "row",
+    "fieldGroup": [
+      {
+        "className": "col-xs-4",
+        "type": "input",
+        "key": "project_start_date",
+        "templateOptions": {
+          "type": "date",
+          "label": "Proposed Start Date",
+          "required":true
+        },
+         "validation": {
+          "show": true
+      	}
+      },
+      {
+        "className": "col-xs-offset-1 col-xs-4",
+        "type": "input",
+        "key": "project_end_date",
+        "templateOptions": {
+          "type": "date",
+          "label": "Expected End Date",
+          "required":true
+        },
+         "validation": {
+          "show": true
+      	}
+      }
+    ]
+  },
+  {
+    "className": "row",
+    "fieldGroup": [
+      {
+        "className": "col-xs-12",
+        "type": "textarea",
+        "key": "project_plan",
+        "templateOptions": {
+          "type": "text",
+          "rows": 3,
+          "placeholder": "расписание для проведения каждого этапа проекта с указанием основных ключевых дат и целей / ожидаемых результатов для каждого этапа",
+          "label": "Project Plan",
+          "required":true
+        },
+         "validation": {
+          "show": true
+      	}
+      }
+    ]
+  }
+]

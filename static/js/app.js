@@ -13,11 +13,19 @@ var myApp = angular.module('myApp', [
 
 myApp.config(['$routeProvider', function($routeProvider) {
     $routeProvider.
-    when('/form', {
+    when('/Language/:lg', {
         templateUrl: './static/partials/form.html',
         controller: 'formController'
     }).
-    when('/success', {
+    when('/Language/:lg', {
+        templateUrl: './static/partials/form.html',
+        controller: 'formController'
+    }).    
+    when('/Language/:lg/form', {
+        templateUrl: './static/partials/form.html',
+        controller: 'formController'
+    }).    
+    when('/Language/:lg/success', {
         templateUrl: './static/partials/success.html',
         controller: 'successController'
     }).
@@ -25,6 +33,8 @@ myApp.config(['$routeProvider', function($routeProvider) {
         templateUrl: './static/partials/form.html',
         controller: 'formController'
     });
+
+
 }]);
 
 
