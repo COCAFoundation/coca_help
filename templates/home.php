@@ -4,7 +4,7 @@
   <head>
   <meta name="google-site-verification" content="bo4VH478YFeWvahD1hAmX2m1ukQg4HkATGRY9LgvRjw" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <link rel="icon" type="image/x-icon" href="./favicon.ico">
   <!-- Bootstrap 3 CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
@@ -39,18 +39,15 @@
             </a>
           </div>
           <div class="col-md-4 col-sm-4 col-xs-4">
-             <div class="social-bar"> 
-                <a href="http://www.facebook.com/COCAFoundation" target="_blank" class="">
-                    <img src="./static/images/social-icons-32x32/facebook.png" alt="Children of Central Asia Foundation"/>
+             <div class="pull-right" style="padding:20px;">
+                <a href="#/Language/en" class="">
+                  <img src="./static/images/flags/United-States.png" class="img-responsive" alt="English Language"/>
                 </a>
-                <a href="https://twitter.com/cocafoundation" target="_blank" class="">
-                    <img src="./static/images/social-icons-32x32/twitter.png" alt="Children of Central Asia Foundation"/>
+                <a href="#/Language/ru" class="">
+                    <img src="./static/images/flags/Russia.png" class="img-responsive" alt="Russian Language"/>
                 </a>
-                <a href="http://www.youtube.com/cocafoundation" target="_blank" class="">
-                    <img src="./static/images/social-icons-32x32/youtube.png" alt="Children of Central Asia Foundation"/>
-                </a>
-                <a href="http://www.flickr.com/photos/cocafoundation/" target="_blank" class="">
-                    <img src="./static/images/social-icons-32x32/flickr.png" alt="Children of Central Asia Foundation"/>
+                <a href="#/Language/kz" class="">
+                    <img src="./static/images/flags/Kazakhstan.png" class="img-responsive" alt="Kazakh Language"/>
                 </a>
             </div>
         <div class="clearfix">&nbsp;</div>
