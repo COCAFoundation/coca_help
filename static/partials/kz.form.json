@@ -272,7 +272,7 @@
         "key": "project_start_date",
         "templateOptions": {
           "type": "date",
-          "label": "Proposed Start Date",
+          "label": "жобаның жоспарлы басталу және аяқталу күні",
           "required":true
         },
          "validation": {
@@ -285,7 +285,7 @@
         "key": "project_end_date",
         "templateOptions": {
           "type": "date",
-          "label": "Expected End Date",
+          "label": "Жобаның әрбір кезеңінд жоспарланған шығыстар",
           "required":true
         },
          "validation": {
@@ -305,7 +305,7 @@
           "type": "text",
           "rows": 3,
           "placeholder": "басты күндер мен мақсаттарын айқындайтын жобаның әрбір кезең / әрбір кезең үшін күтілетін нәтижелер кестесі",
-          "label": "Project Plan",
+          "label": "жоба жоспарлайды",
           "required":true
         },
          "validation": {

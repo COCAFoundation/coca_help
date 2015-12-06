@@ -272,7 +272,7 @@
         "key": "project_start_date",
         "templateOptions": {
           "type": "date",
-          "label": "Proposed Start Date",
+          "label": "планируемые даты начала и завершения проекта",
           "required":true
         },
          "validation": {
@@ -285,7 +285,7 @@
         "key": "project_end_date",
         "templateOptions": {
           "type": "date",
-          "label": "Expected End Date",
+          "label": "Запланированные расходы на каждом этапе проекта",
           "required":true
         },
          "validation": {
@@ -305,7 +305,7 @@
           "type": "text",
           "rows": 3,
           "placeholder": "расписание для проведения каждого этапа проекта с указанием основных ключевых дат и целей / ожидаемых результатов для каждого этапа",
-          "label": "Project Plan",
+          "label": "План проекта",
           "required":true
         },
          "validation": {
