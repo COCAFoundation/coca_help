@@ -45,7 +45,7 @@
         "type": "input",
         "key": "organization_website",
         "templateOptions": {
-          "type": "url",
+          "type": "input",
           "placeholder": "Корпоративный веб-сайт",
           "label": "Корпоративный веб-сайт"
         }
