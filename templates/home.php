@@ -30,17 +30,22 @@
           <div class="col-md-12">
             <div class="row">
             		<div class="col-md-10 col-md-offset-1">
-            			<h2>4th Annual LRES PTO Superhero Fun Run</h2>
-            			<p>Ready to unleash your child's inner superhero? join the Lake Ridge Elementary School (LRES) Parent Teacher Organization (PTO) for the 4th annual LRES PTO Superhero fun run!</p>
-            			<p>Your donation goes towards your child's, or your grandchild's, or possibly your neighbor's friend's college roommate's pet sitter's uncle's child's 2016-17 class fundraising competition.</p>
+            			<h2>Get ready for the 3rd Annual LRES PTO Superhero Fun Run!!!</h2>
+            			<p>Ready to unleash your child's inner superhero? join the Lake Ridge Elementary School (LRES) Parent Teacher Organization (PTO) for the 3rd annual LRES PTO Superhero fun run!</p>
             		</div>
-            	</div>
-            	<div class="clearfix" style="height:32px;"></div>
-            	<div class="row">
-            		<div class="col-md-10 col-md-offset-1">
-            			&nbsp;
-            		</div>
-            	</div>
+          	</div>
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                  <p><span><strong>The donation drive will start September 1st</strong></span></p>
+                  <p><span>Come back here for the latest information on how to get involved</strong></p>
+                </div>
+            </div>
+          	<div class="clearfix" style="height:32px;"></div>
+          	<div class="row">
+          		<div class="col-md-10 col-md-offset-1">
+          			&nbsp;
+          		</div>
+          	</div>
         </div>
     </div>
 </div>
