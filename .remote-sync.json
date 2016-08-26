@@ -1,0 +1,15 @@
+{
+  "uploadOnSave": true,
+  "useAtomicWrites": false,
+  "deleteLocal": false,
+  "hostname": "anaconda.dreamhost.com",
+  "target": "funrunfbapp.lrespto.org/",
+  "ignore": [
+    ".remote-sync.json",
+    ".git/**"
+  ],
+  "username": "davlar33",
+  "password": "L33tp$$wrD",
+  "watch": [],
+  "transport": "scp"
+}

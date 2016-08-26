@@ -73,6 +73,16 @@ $app->get('/', function () use ($app) {
     $app->redirect('./home#/Language/'.$language);
 });
 
+$app->post('/', function () use ($app) {
+    $language = $app->request->get('language');
+    if (empty($language)){
+        $language = '';
+    }
+
+    $app->redirect('./home#/Language/'.$language);
+});
+
+
 
 $app->get('/home', function () use ($app) {
     $app->render('home.php');
@@ -81,7 +91,7 @@ $app->get('/home', function () use ($app) {
 
 $app->post('/api/send_email', function () use ($app, $mail, $config_array) {
     //Create book
-    
+
     $organization_address= $app->request->params('organization_address');
     $email= $app->request->params('email');
     $first_name= $app->request->params('first_name');
@@ -108,7 +118,7 @@ $app->post('/api/send_email', function () use ($app, $mail, $config_array) {
     }
     if (empty($email)){
         $email = '';
-    }    
+    }
     if (empty($first_name)){
         $first_name = '';
     }
@@ -153,8 +163,8 @@ $app->post('/api/send_email', function () use ($app, $mail, $config_array) {
     }
     if (empty($organization_website)){
         $organization_website = '';
-    }        
-    
+    }
+
 
     //secret (required)   6Leq3gwTAAAAAIXugq0ixQxHM4ZkFEDlq0WrSDGF
     //response (required) The value of 'g-recaptcha-response'.
@@ -202,7 +212,7 @@ $app->post('/api/send_email', function () use ($app, $mail, $config_array) {
                                             Email: '.$email.'<br/>
                                         </p>
                                         <h3>Project Proposal</h3>
-                                        <p>                            
+                                        <p>
                                             Program/Project Name: '.$project_name.'<br/>
                                             Estimated Total Cost: $'.$project_cost_estimate.'<br/>
                                             Amount of Grant Requested: $'.$project_grant_amount_requested.'<br/>
@@ -210,9 +220,9 @@ $app->post('/api/send_email', function () use ($app, $mail, $config_array) {
                                             Description of Project: '.$project_description.'<br/>
                                             Specific Objectives: '.$project_objectives.'<br/>
                                             Expected Results: '.$project_expected_results.'<br/>
-                                            Proposed Start Date: '.$project_start_date.'<br/>        
+                                            Proposed Start Date: '.$project_start_date.'<br/>
                                             Proposed End Date: '.$project_end_date.'<br/>
-                                            Project Plan: '.$project_plan.'                                                                                                            
+                                            Project Plan: '.$project_plan.'
                                         </p>
                                     </div>
                                 </div>
@@ -266,8 +276,8 @@ $app->post('/api/send_email', function () use ($app, $mail, $config_array) {
                                 <div class="col-md-12">
                                         <h1>Thank you!</h1>
                                         <p>
-                                            The Children of Central Asia foundation would like to formally thank you for 
-                                            submitting your application. Please expect several weeks for your application to be 
+                                            The Children of Central Asia foundation would like to formally thank you for
+                                            submitting your application. Please expect several weeks for your application to be
                                             processed. If your project is selected, COCA will reach out.
                                         </p>
                                         <p>
@@ -291,7 +301,7 @@ $app->post('/api/send_email', function () use ($app, $mail, $config_array) {
                                             Email: '.$email.'<br/>
                                         </p>
                                         <h3>Project Proposal</h3>
-                                        <p>                            
+                                        <p>
                                             Program/Project Name: '.$project_name.'<br/>
                                             Estimated Total Cost: $'.$project_cost_estimate.'<br/>
                                             Amount of Grant Requested: $'.$project_grant_amount_requested.'<br/>
@@ -299,9 +309,9 @@ $app->post('/api/send_email', function () use ($app, $mail, $config_array) {
                                             Description of Project: '.$project_description.'<br/>
                                             Specific Objectives: '.$project_objectives.'<br/>
                                             Expected Results: '.$project_expected_results.'<br/>
-                                            Proposed Start Date: '.$project_start_date.'<br/>        
+                                            Proposed Start Date: '.$project_start_date.'<br/>
                                             Proposed End Date: '.$project_end_date.'<br/>
-                                            Project Plan: '.$project_plan.'                                                                                                            
+                                            Project Plan: '.$project_plan.'
                                         </p>
                                     </div>
                                 </div>
@@ -317,9 +327,3 @@ $app->post('/api/send_email', function () use ($app, $mail, $config_array) {
 
 
 $app->run();
-
-
-
-
-
-
