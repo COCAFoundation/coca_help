@@ -65,27 +65,17 @@ $app = new \Slim\Slim(array(
 
 
 $app->get('/', function () use ($app) {
-    $language = $app->request->get('language');
-    if (empty($language)){
-        $language = '';
-    }
-
-    $app->redirect('./home#/Language/'.$language);
+  $app->render('index.php');
 });
 
 $app->post('/', function () use ($app) {
-    $language = $app->request->get('language');
-    if (empty($language)){
-        $language = '';
-    }
-
-    $app->redirect('./home#/Language/'.$language);
+  $app->render('index.php');
 });
 
 
 
 $app->get('/home', function () use ($app) {
-    $app->render('home.php');
+    $app->render('index.php');
 });
 
 
