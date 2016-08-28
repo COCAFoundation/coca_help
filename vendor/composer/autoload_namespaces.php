@@ -7,5 +7,6 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Slim' => array($baseDir . '/'),
+    'Psr\\Log\\' => array($vendorDir . '/psr/log'),
     'Pimple' => array($vendorDir . '/pimple/pimple/src'),
 );
