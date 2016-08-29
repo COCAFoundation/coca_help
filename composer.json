@@ -1,9 +1,9 @@
 {
-    "name": "slim/slim",
+    "name": "funrunfbapp",
     "type": "library",
     "description": "Slim Framework, a PHP micro framework",
-    "keywords": ["microframework","rest","router"],
-    "homepage": "http://github.com/codeguy/Slim",
+    "keywords": ["facebook","app","donation"],
+    "homepage": "https://github.com/davidlarrimore/lresptofunrun",
     "license": "MIT",
     "authors": [
         {
@@ -14,7 +14,13 @@
     ],
     "require": {
         "php": ">=5.3.0",
-        "phpmailer/phpmailer": "^5.2"
+        "phpmailer/phpmailer": "^5.2",
+        "monolog/monolog": "^1.21",
+        "slim/slim": "^3.5",
+        "slim/php-view": "^2.1",
+        "phing/phing": "^2.14",
+        "phpunit/php-code-coverage": "^2.2",
+        "phpunit/phpunit": "^4.8"
     },
     "suggest": {
         "ext-mcrypt": "Required for HTTP cookie encryption"

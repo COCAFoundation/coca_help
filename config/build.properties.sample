@@ -1,0 +1,5 @@
+# Environment
+hostname=myserver
+username=myusername
+password=sweetpassword
+documentroot=testfunrunfbapp
