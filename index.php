@@ -11,7 +11,7 @@ require 'vendor/autoload.php';
 /**************
 * CONFIG FILE *
 ***************/
-$config_array = parse_ini_file("config.ini");
+$config_array = parse_ini_file("config/config.ini");
 
 
 /****************
