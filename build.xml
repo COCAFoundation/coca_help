@@ -15,34 +15,6 @@
     <!-- ============================================  -->
     <target name="build" depends="prepare">
 
-        <echo msg="Copying files to ./build directory..." />
-        <copy file="./index.php" tofile="./build/index.php" />
-        <copy file="./.htaccess" tofile="./build/.htaccess" />
-
-        <copy todir="./build/config">
-          <fileset dir="config">
-              <include name="**"></include>
-              <exclude name="**/.svn/**"></exclude>
-          </fileset>
-        </copy>
-        <copy todir="./build/vendor">
-          <fileset dir="vendor">
-              <include name="**"></include>
-              <exclude name="**/.svn/**"></exclude>
-          </fileset>
-        </copy>
-        <copy todir="./build/static">
-          <fileset dir="static">
-              <include name="**"></include>
-              <exclude name="**/.svn/**"></exclude>
-          </fileset>
-        </copy>
-        <copy todir="./build/templates">
-          <fileset dir="templates">
-              <include name="**"></include>
-              <exclude name="**/.svn/**"></exclude>
-          </fileset>
-        </copy>
     </target>
 
     <!-- ============================================  -->
@@ -50,6 +22,6 @@
     <!-- ============================================  -->
     <target name="dist" depends="build">
       <echo msg="Running git update..." />
-      <exec command="ssh ${username}@${hostname}} "cd ${documentroot};git pull;"" dir="/home" />
+      <exec command="ssh ${username}@${hostname}} &quot;cd ${documentroot};git pull&quot;" dir="/home" />
     </target>
 </project>
