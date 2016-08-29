@@ -49,20 +49,7 @@
     <!-- (DEFAULT)  Target: dist                       -->
     <!-- ============================================  -->
     <target name="dist" depends="build">
-        <echo msg="Creating archive..." />
-
-        <tar destfile="./build/build.tar.gz" compression="gzip">
-            <fileset dir="./build">
-                <include name="*.*" />
-            </fileset>
-        </tar>
-
-        <scp username="${username}" password="${password}" host="${hostname}" todir="${documentroot}/">
-            <fileset dir="build">
-                <include name="*.tar.gz" />
-            </fileset>
-        </scp>
-
-        <echo msg="Files copied and compressed in build directory OK!" />
+      <echo msg="Running git update..." />
+      <exec command="ssh ${username}@${hostname}} "cd ${documentroot};git pull;"" dir="/home" />
     </target>
 </project>
