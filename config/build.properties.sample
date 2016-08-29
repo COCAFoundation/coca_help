@@ -1,5 +1,11 @@
 # Environment
-hostname=myserver
-username=myusername
-password=sweetpassword
-documentroot=testfunrunfbapp
+dev.hostname=myserver
+dev.username=myusername
+dev.password=sweetpassword
+dev.documentroot=testfunrunfbapp
+
+
+production.hostname=myserver
+production.username=myusername
+production.password=sweetpassword
+production.documentroot=testfunrunfbapp

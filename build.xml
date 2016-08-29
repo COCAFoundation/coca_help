@@ -14,14 +14,32 @@
     <!-- Target: build                                 -->
     <!-- ============================================  -->
     <target name="build" depends="prepare">
-
+        <echo msg="Copying config to ./build directory..." />
+        <copy todir="./build/config">
+          <fileset dir="config">
+              <include name="**"></include>
+              <exclude name="**/.svn/**"></exclude>
+          </fileset>
+        </copy>
     </target>
 
     <!-- ============================================  -->
     <!-- (DEFAULT)  Target: dist                       -->
     <!-- ============================================  -->
     <target name="dist" depends="build">
-      <echo msg="Running git update..." />
-      <exec command="ssh ${username}@${hostname} &quot;cd ${documentroot};git pull&quot;" dir="/" />
+
+
+      <filesync
+        sourcedir="./build/config"
+        destinationdir="${dev.username}@${dev.hostname}:${dev.documentroot}/config" />
+
+
+      <echo msg="Pushing Dev GIT Updates" />
+      <exec command="ssh ${dev.username}@${dev.hostname} &quot;cd ${dev.documentroot};git pull&quot;" dir="/" />
+
+      <echo msg="Pushing Production GIT Updates" />
+      <exec command="ssh ${production.username}@${production.hostname} &quot;cd ${production.documentroot};git pull&quot;" dir="/" />
+
+
     </target>
 </project>

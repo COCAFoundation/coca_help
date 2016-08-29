@@ -2,9 +2,7 @@
 vendor/
 build/
 .svn/
-config/*.cfg
-config/*.ini
-config/*.properties
+config/
 *.svn
 *.svn-base
 composer.lock
