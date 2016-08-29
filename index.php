@@ -89,7 +89,7 @@ $app->get('/', function ($request, $response, $args) {
 });
 
 $app->post('/', function ($request, $response, $args) {
-  return $app->response->redirect('/');
+  return $this->response->redirect('/');
 });
 
 
