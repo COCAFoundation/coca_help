@@ -22,6 +22,6 @@
     <!-- ============================================  -->
     <target name="dist" depends="build">
       <echo msg="Running git update..." />
-      <exec command="ssh ${username}@${hostname}} &quot;cd ${documentroot};git pull&quot;" dir="/home" />
+      <exec command="ssh ${username}@${hostname} &quot;cd ${documentroot};git pull&quot;" dir="/" />
     </target>
 </project>
