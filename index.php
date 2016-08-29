@@ -75,6 +75,7 @@ $app->get('/', function ($request, $response, $args) {
   $this->logger->addInfo("Start Date: ".$campaignStartDate);
   $this->logger->addInfo("End Date: ".$campaignEndDate);
   $this->logger->addInfo("Todays Date: ".$todaysDate);
+  echo($todaysDate);
 
   //$newformat = date('Y-m-d',$time);
 
