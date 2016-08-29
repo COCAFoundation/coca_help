@@ -30,16 +30,25 @@
 
 
       <filesync
-        sourcedir="./build/config"
-        destinationdir="${dev.username}@${dev.hostname}:${dev.documentroot}/config" />
+        sourcedir="./build/config/"
+        destinationdir="${dev.username}@${dev.hostname}:${dev.documentroot}/config/" />
 
 
       <echo msg="Pushing Dev GIT Updates" />
       <exec command="ssh ${dev.username}@${dev.hostname} &quot;cd ${dev.documentroot};git pull&quot;" dir="/" />
 
+
+      <filesync
+        sourcedir="./build/config/"
+        destinationdir="${production.username}@${production.hostname}:${production.documentroot}/config/" />
+
+
       <echo msg="Pushing Production GIT Updates" />
       <exec command="ssh ${production.username}@${production.hostname} &quot;cd ${production.documentroot};git pull&quot;" dir="/" />
 
+
+      <!-- Delete a directory -->
+      <delete dir="./build" includeemptydirs="true" verbose="true" failonerror="true" />
 
     </target>
 </project>

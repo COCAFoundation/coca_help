@@ -35,6 +35,7 @@
       <div class="col-xs-10 col-xs-offset-1 block" style="text-align:center;">
         <div class="row">
           <div class="col-xs-12 ">
+            <h2 class="superhero">Closeout</h2>
             <h2 class="superhero">Get ready for the 3rd Annual LRES PTO Superhero Fun Run!!!</h2>
             <p><u>Ready to unleash your child's inner superhero?</u> join the Lake Ridge Elementary School (LRES) Parent Teacher Organization (PTO) for the 3rd annual LRES PTO Superhero fun run!</p>
             </div>

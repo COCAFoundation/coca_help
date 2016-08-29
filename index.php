@@ -1,8 +1,10 @@
 <?php
 use \Psr\Http\Message\ServerRequestInterface as Request;
 use \Psr\Http\Message\ResponseInterface as Response;
+
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
+
 require __DIR__ . '/vendor/autoload.php';
 require 'vendor/autoload.php';
 
@@ -12,17 +14,7 @@ require 'vendor/autoload.php';
 * CONFIG FILE *
 ***************/
 $config_array = parse_ini_file("config/config.ini");
-
-
-/****************
-* LOGGING SETUP *
-****************/
-$log = new Logger('app');
-#$log->pushHandler(new StreamHandler('lresptofunrun.log', Logger::WARNING));
-
-// add records to the log
-#$log->warning('Foo');
-#$log->error('Bar');
+date_default_timezone_set('UTC');
 
 
 /*******************
@@ -45,7 +37,9 @@ $mail->Port = 587;                                    // TCP port to connect to
 $mail->isHTML(true);                                  // Set email format to HTML
 
 
-$app = new \Slim\App;
+$app = new \Slim\App(array(
+    'mode' => 'development'
+));
 
 // Get container
 $container = $app->getContainer();
@@ -55,18 +49,59 @@ $container['view'] = function ($container) {
     return new \Slim\Views\PhpRenderer('templates/');
 };
 
+// monolog
+$container['logger'] = function ($c) {
+    $settings = $c->get('settings');
+    $logger = new Monolog\Logger("APP_NAME");
+    $logger->pushProcessor(new Monolog\Processor\UidProcessor());
+    //$logger->pushHandler(new Monolog\Handler\StreamHandler("app.log", Monolog\Logger::DEBUG));
+    $logger->pushHandler(new StreamHandler('php://stdout', Logger::DEBUG)); // <<< uses a stream
+
+    return $logger;
+};
+
+
 
 $app->get('/', function ($request, $response, $args) {
-  return $this->view->render($response, 'index.php', []);
+  $config_array = parse_ini_file("config/config.ini");
+  $campaignStartDateString = strtotime($config_array['campaign_start_date']);
+  $campaignStartDate = date('Y-m-d',$campaignStartDateString);
+
+  $campaignEndDateString = strtotime($config_array['campaign_end_date']);
+  $campaignEndDate = date('Y-m-d',$campaignEndDateString);
+
+  $todaysDate = date('Y-m-d');
+
+  $this->logger->addInfo("Start Date: ".$campaignStartDate);
+  $this->logger->addInfo("End Date: ".$campaignEndDate);
+  $this->logger->addInfo("Todays Date: ".$todaysDate);
+  //echo($todaysDate);
+
+  //$newformat = date('Y-m-d',$time);
+
+  $data = [
+            'todays_date' => $todaysDate,
+            'campaign_start_date' => $campaignStartDate,
+            'campaign_end_date' => $campaignEndDate
+          ];
+
+  if ($todaysDate > $campaignEndDate){
+    $theView = "closeout.php";
+  }elseif ($todaysDate > $campaignStartDate) {
+    $theView = "track.php";
+  }else {
+    $theView = "prepare.php";
+  }
+
+  $this->logger->addInfo("View: ".$theView);
+  return $this->view->render($response, $theView, $data);
+
+
 });
 
 $app->post('/', function ($request, $response, $args) {
-  return $this->view->render($response, 'index.php', [
-        'name' => $args['name']
-    ]);
+  return $this->response->withRedirect('/');
 });
-
-
 
 
 $app->run();
