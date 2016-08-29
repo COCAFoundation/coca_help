@@ -36,6 +36,7 @@
         <div class="row">
           <div class="col-xs-12 ">
             <h2 class="superhero">TRACK</h2>
+            <h4>*<?php echo $data['todays_date'];?>*</p>
             <p><u>Ready to unleash your child's inner superhero?</u> join the Lake Ridge Elementary School (LRES) Parent Teacher Organization (PTO) for the 3rd annual LRES PTO Superhero fun run!</p>
             </div>
         </div>

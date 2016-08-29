@@ -30,8 +30,8 @@
 
 
       <filesync
-        sourcedir="./build/config"
-        destinationdir="${dev.username}@${dev.hostname}:${dev.documentroot}/config" />
+        sourcedir="./build/config/"
+        destinationdir="${dev.username}@${dev.hostname}:${dev.documentroot}/config/" />
 
 
       <echo msg="Pushing Dev GIT Updates" />
@@ -39,8 +39,8 @@
 
 
       <filesync
-        sourcedir="./build/config"
-        destinationdir="${production.username}@${production.hostname}:${production.documentroot}/config" />
+        sourcedir="./build/config/"
+        destinationdir="${production.username}@${production.hostname}:${production.documentroot}/config/" />
 
 
       <echo msg="Pushing Production GIT Updates" />

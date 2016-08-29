@@ -75,17 +75,27 @@ $app->get('/', function ($request, $response, $args) {
   $this->logger->addInfo("Start Date: ".$campaignStartDate);
   $this->logger->addInfo("End Date: ".$campaignEndDate);
   $this->logger->addInfo("Todays Date: ".$todaysDate);
-  echo($todaysDate);
+  //echo($todaysDate);
 
   //$newformat = date('Y-m-d',$time);
 
+  $data = [
+            'todays_date' => $todaysDate,
+            'campaign_start_date' => $campaignStartDate,
+            'campaign_end_date' => $campaignEndDate
+          ];
+
   if ($todaysDate > $campaignEndDate){
-    return $this->view->render($response, 'closeout.php', []);
+    $theView = "closeout.php";
   }elseif ($todaysDate > $campaignStartDate) {
-    return $this->view->render($response, 'track.php', []);
+    $theView = "track.php";
   }else {
-    return $this->view->render($response, 'prepare.php', []);
+    $theView = "prepare.php";
   }
+
+  $this->logger->addInfo("View: ".$theView);
+  return $this->view->render($response, $theView, $data);
+
 
 });
 
