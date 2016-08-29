@@ -3,7 +3,7 @@ use \Psr\Http\Message\ServerRequestInterface as Request;
 use \Psr\Http\Message\ResponseInterface as Response;
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
-
+require __DIR__ . '/vendor/autoload.php';
 require 'vendor/autoload.php';
 
 
