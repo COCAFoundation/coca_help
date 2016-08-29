@@ -1,3 +1,11 @@
+<?php
+#SETTING UP SOME VARIABLES
+$dateIn= strtotime($data['campaign_start_date']);
+$campaignStartDate = date('F, dS',$dateIn);
+$campaignStartDateCountdown = date('Y/m/d',$dateIn);
+
+?>
+
 <DOCTYPE html>
 <!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
 <html>
@@ -28,13 +36,14 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+
   </head>
 <body>
   <div class="container">
     <div class="row">
       <div class="col-xs-10 col-xs-offset-1 block" style="text-align:center;">
         <div class="row">
-          <div class="col-xs-12 ">
+          <div class="col-xs-12">
             <h2 class="superhero">Get ready for the 3rd Annual LRES PTO Superhero Fun Run!!!</h2>
             <p><u>Ready to unleash your child's inner superhero?</u> join the Lake Ridge Elementary School (LRES) Parent Teacher Organization (PTO) for the 3rd annual LRES PTO Superhero fun run!</p>
             </div>
@@ -42,7 +51,15 @@
         <div class="row">
           <div class="col-xs-12">
             <p>&nbsp;</p>
-            <h4><strong>The donation drive will start <u>September 15th</u></strong></h4>
+            <h4><strong>The donation drive will start <u><?php echo $campaignStartDate;?></u></strong></h4>
+            <div class="row">
+              <div class="col-xs-10 col-xs-offset-1">
+                <div class="panel panel-default">
+                  <div data-countdown="<?php echo $campaignStartDateCountdown;?>" class="panel-body" style="font-weight:bold;font-size:1.5em;"></div>
+                </div>
+              </div>
+            </div>
+            <p>&nbsp;</p>
             <p>&nbsp;</p>
             <p class="">Come back here for the latest information on how to get involved</p>
           </div>
@@ -51,11 +68,32 @@
     </div>
   </div>
 
+  <!-- jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js" type="text/javascript"></script>
 
-  <!-- Latest compiled and minified jQuery -->
-  <script src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
-
-  <!-- Latest compiled and minified JavaScript -->
+  <!-- Bootstrap JS -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+  <!-- Countdown -->
+  <script src="./static/js/jquery.countdown.min.js" type="text/javascript"></script>
+
+  <script type="text/javascript">
+    $('div#countdown').countdown("<?php echo $campaignStartDateCountdown;?>", function(event) {
+      $(this).html(event.strftime('%-w weeks %-n days %-H hours %-M minutes %-S seconds'));
+    });
+
+    $('[data-countdown]').each(function() {
+      var $this = $(this), finalDate = $(this).data('countdown');
+      $this.countdown(finalDate, function(event) {
+        $this.html(event.strftime(''
+    + '<span class="label label-info">%D</span> day%!d &nbsp;&nbsp;'
+    + '<span class="label label-info">%H</span> hours &nbsp;&nbsp;'
+    + '<span class="label label-info">%M</span> min &nbsp;&nbsp;'
+    + '<span class="label label-info">%S</span> sec'));
+      });
+    });
+  </script>
+
+
 </body>
 </html>
