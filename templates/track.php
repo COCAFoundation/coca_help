@@ -41,22 +41,33 @@ $campaignEndDateCountdown = date('Y/m/d',$dateIn);
 <body>
   <div class="container">
     <div class="row">
-      <div class="col-xs-12 block" style="text-align:center;">
+      <div class="col-xs-12" style="text-align:center;">
         <div class="row">
           <div class="col-xs-12">
             <h2 class="superhero">LETS GO!!!!!</h2>
-            </div>
+          </div>
         </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-3 col-xs-offset-9" style="text-align:center;">
         <div class="row">
           <div class="col-xs-12">
-            <p>&nbsp;</p>
-            <p><strong>The donation drive will end on <u><?php echo $campaignEndDate;?></u></strong></p>
-            <div class="row">
-              <div class="col-xs-10 col-xs-offset-1">
-                <div class="panel panel-default">
-                  <div data-countdown="<?php echo $campaignEndDateCountdown;?>" class="panel-body"></div>
-                </div>
-              </div>
+             <button class="cv-donate">Donate</button>
+          </div>
+        </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 block" style="text-align:center;">
+        <p>&nbsp;</p>
+        <p><strong>The donation drive will end on <u><?php echo $campaignEndDate;?></u></strong></p>
+        <div class="row">
+          <div class="col-xs-10 col-xs-offset-1">
+            <div class="panel panel-default">
+              <div data-countdown="<?php echo $campaignEndDateCountdown;?>" class="panel-body"></div>
             </div>
           </div>
         </div>
@@ -84,6 +95,13 @@ $campaignEndDateCountdown = date('Y/m/d',$dateIn);
     });
   </script>
 
+
+  <!-- CauseVox -->
+  <script type="text/javascript" src="//js.causevox.com/v2"></script>
+
+  <script type="text/javascript">
+    CV.setDomain("funrun.lrespto.org");
+  </script>
 
 </body>
 </html>

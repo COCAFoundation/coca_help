@@ -8,19 +8,18 @@ use Monolog\Handler\StreamHandler;
 require __DIR__ . '/vendor/autoload.php';
 require 'vendor/autoload.php';
 
+date_default_timezone_set('America/New_York');
 
 
 /**************
 * CONFIG FILE *
 ***************/
-$config_array = parse_ini_file("config/config.ini");
-date_default_timezone_set('UTC');
-
+$config_array = parse_ini_file("config/config.ini", true);
 
 /*******************
 * PHP Mailer Setup *
 *******************/
-
+/*
 $mail = new PHPMailer;
 
 //$mail->SMTPDebug = 3;                               // Enable verbose debug output
@@ -28,17 +27,17 @@ $mail = new PHPMailer;
 $mail->isSMTP();                                      // Set mailer to use SMTP
 $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
 $mail->SMTPAuth = true;                               // Enable SMTP authentication
-$mail->Username   = $config_array['google_username']; // SMTP account username example
-$mail->Password   = $config_array['google_password'];        // SMTP account password example
+$mail->Username   = $config_array[$mode]['google_username']; // SMTP account username example
+$mail->Password   = $config_array[$mode]['google_password'];        // SMTP account password example
 $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
 $mail->Port = 587;                                    // TCP port to connect to
 
 
 $mail->isHTML(true);                                  // Set email format to HTML
-
+*/
 
 $app = new \Slim\App(array(
-    'mode' => 'development'
+    'mode' => $config_array['app']['mode']
 ));
 
 // Get container
@@ -51,10 +50,11 @@ $container['view'] = function ($container) {
 
 // monolog
 $container['logger'] = function ($c) {
+    $config_array = parse_ini_file("config/config.ini", true);
     $settings = $c->get('settings');
-    $logger = new Monolog\Logger("APP_NAME");
-    $logger->pushProcessor(new Monolog\Processor\UidProcessor());
-    //$logger->pushHandler(new Monolog\Handler\StreamHandler("app.log", Monolog\Logger::DEBUG));
+    $logger = new Monolog\Logger($config_array['app']['name']);
+    //$logger->pushProcessor(new Monolog\Processor\UidProcessor());
+    $logger->pushHandler(new Monolog\Handler\StreamHandler("./logs/".$config_array['app']['name'].".log", Monolog\Logger::DEBUG));
     $logger->pushHandler(new StreamHandler('php://stdout', Logger::DEBUG)); // <<< uses a stream
 
     return $logger;
@@ -63,11 +63,13 @@ $container['logger'] = function ($c) {
 
 
 $app->get('/', function ($request, $response, $args) {
-  $config_array = parse_ini_file("config/config.ini");
-  $campaignStartDateString = strtotime($config_array['campaign_start_date']);
+
+  $config_array = parse_ini_file("config/config.ini", true);
+
+  $campaignStartDateString = strtotime($config_array['campaign']['campaign_start_date']);
   $campaignStartDate = date('Y-m-d',$campaignStartDateString);
 
-  $campaignEndDateString = strtotime($config_array['campaign_end_date']);
+  $campaignEndDateString = strtotime($config_array['campaign']['campaign_end_date']);
   $campaignEndDate = date('Y-m-d',$campaignEndDateString);
 
   $todaysDate = date('Y-m-d');
