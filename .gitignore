@@ -1,8 +1,13 @@
 .idea
 vendor/
+build/
 .svn/
+config/
+logs/
 *.svn
 *.svn-base
 composer.lock
 
 *.ini
+
+lresptofunrun.log
