@@ -1,0 +1,31 @@
+<section ngCloak>
+	<div class="row">
+		<div class="col-md-10 col-md-offset-1">
+			<h2>{{text.form_title}}</h2>
+			<p>{{text.form_subtitle}}</p>
+			  <div class="well well-sm">
+			    {{text.form_note}}
+			  </div>
+		</div>
+	</div>
+	<div class="clearfix" style="height:32px;"></div>
+	<div class="row">
+		<div class="col-md-10 col-md-offset-1">
+			<div class="panel panel-warning">
+				<div class="panel-heading"><strong>{{text.form_section_1_header}}</strong></div>
+				<div class="panel-body" >
+			        <formly-form model="model" form="aidForm" id="aidForm" ng-submit="submit()" fields="formFields" novalidate>
+			        	<p>&nbsp;</p>
+			        	<p>&nbsp;</p>			        	
+			        	<hr/>
+			        	<div class="centered">
+					   		<button class="btn btn-primary btn-lg" ng-click="save()">{{text.form_save_button}}</button>
+					    	<button class="btn btn-warning btn-lg" ng-click="clear()">{{text.form_clear_button}}</button>
+					  		<button type="submit" class="btn btn-primary btn-lg" ng-click="submit()">{{text.form_submit_button}}</button>
+					  	</div>
+			        </formly-form>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

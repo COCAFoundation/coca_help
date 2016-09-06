@@ -1,12 +1,20 @@
 <?php
-use \Psr\Http\Message\ServerRequestInterface as Request;
-use \Psr\Http\Message\ResponseInterface as Response;
 
-use Monolog\Logger;
-use Monolog\Handler\StreamHandler;
 
-require __DIR__ . '/vendor/autoload.php';
-require 'vendor/autoload.php';
+if (PHP_SAPI == 'cli-server') {
+    // To help the built-in PHP dev server, check if the request was actually for
+    // something which should probably be served as a static file
+    $url = parse_url($_SERVER['REQUEST_URI']);
+    $file = __DIR__.$url['path'];
+    if (is_file($file)) {
+        return false;
+    }
+}
+
+require __DIR__.'/vendor/autoload.php';
+require __DIR__.'/vendor/phpmailer/phpmailer/PHPMailerAutoload.php';
+
+session_start();
 
 date_default_timezone_set('America/New_York');
 
@@ -30,86 +38,25 @@ $mail->Port = 587;                                    // TCP port to connect to
 $mail->isHTML(true);                                  // Set email format to HTML
 */
 
-
 /**************
 * CONFIG FILE *
 **************/
-$config_array = parse_ini_file("config/config.ini", true);
+$settings = require __DIR__.'/config/settings.php';
 
 /****************
 * SLIM APP FILE *
 ****************/
 $app = new \Slim\App(array(
-    'mode' => $config_array['app']['mode'],
-    'settings' => $config_array
+    'settings' => $settings['settings'],
 ));
 
+// Set up dependencies
+require __DIR__.'/src/dependencies.php';
 
-// Get container
-$container = $app->getContainer();
+// Register middleware
+require __DIR__.'/src/middleware.php';
 
-// Register component on container
-$container['view'] = function ($container) {
-    return new \Slim\Views\PhpRenderer('templates/');
-};
-
-// monolog
-$container['logger'] = function ($c) {
-    $settings = $c->get('settings');
-    $logger = new Monolog\Logger($settings['app']['name']);
-    $logger->pushProcessor(new Monolog\Processor\UidProcessor());
-    $logger->pushHandler(new Monolog\Handler\StreamHandler("./logs/".$settings['app']['name'].".log", Monolog\Logger::DEBUG));
-    $logger->pushHandler(new StreamHandler('php://stdout', Logger::DEBUG)); // <<< uses a stream
-
-    return $logger;
-};
-
-/*****************
-*     ROUTES     *
-*****************/
-$app->get('/', function ($request, $response, $args) {
-
-  $campaignStartDateString = strtotime($this->get('settings')['campaign']['campaign_start_date']);
-  $campaignStartDate = date('Y-m-d',$campaignStartDateString);
-
-  $campaignEndDateString = strtotime($this->get('settings')['campaign']['campaign_end_date']);
-  $campaignEndDate = date('Y-m-d',$campaignEndDateString);
-
-  $todaysDate = date('Y-m-d');
-
-  $this->logger->addInfo("Start Date: ".$campaignStartDate);
-  $this->logger->addInfo("End Date: ".$campaignEndDate);
-  $this->logger->addInfo("Todays Date: ".$todaysDate);
-  //echo($todaysDate);
-
-  //$newformat = date('Y-m-d',$time);
-
-  $data = [
-            'todays_date' => $todaysDate,
-            'campaign_start_date' => $campaignStartDate,
-            'campaign_end_date' => $campaignEndDate
-          ];
-
-  if ($todaysDate > $campaignEndDate){
-    $theView = "closeout.php";
-  }elseif ($todaysDate > $campaignStartDate) {
-    $theView = "track.php";
-  }else {
-    $theView = "prepare.php";
-  }
-
-  $this->logger->addInfo("View: ".$theView);
-  return $this->view->render($response, $theView, $data);
-
-});
-
-
-/***********************
-* ADDED FOR FB SUPPORT *
-***********************/
-$app->post('/', function ($request, $response, $args) {
-  return $this->response->withRedirect('/');
-});
-
+// Register routes
+require __DIR__.'/src/routes.php';
 
 $app->run();

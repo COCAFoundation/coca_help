@@ -1,0 +1,26 @@
+{
+    "name": "FunRunFBApp",
+    "authors": [
+        "Beelab <info@bee-lab.net>",
+        null
+    ],
+    "main": "index.php",
+    "private": true,
+    "dependencies": {
+        "jquery": "*",
+        "bootstrap": "*",
+        "jquery.countdown": "*",
+        "reset-css": "*",
+        "angular": "*",
+        "angular-bootstrap": "*",
+        "angular-animate": "*",
+        "angular-route": "*",
+        "angular-resource": "*",
+        "angular-filter": "*",
+        "api-check": "*",
+        "angular-cookies": "*",
+        "angular-pnotify": "*",
+        "angular-formly": "*",
+        "angular-formly-templates-bootstrap": "*"
+    }
+}

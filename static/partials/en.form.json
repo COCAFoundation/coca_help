@@ -1,0 +1,317 @@
+[
+  {
+    "className": "section-label",
+    "template": "<h4>1. Organization Details (If Applicable)</h4><hr />"
+  },
+  {
+    "className": "row",
+    "fieldGroup": [
+      {
+        "className": "col-xs-6",
+        "type": "input",
+        "key": "organization_name",
+        "templateOptions": {
+          "type": "text",
+          "placeholder": "Organization Name",
+          "label": "Organization Name"
+        },
+        "validation": {
+          "show": true
+        }
+      }
+    ]
+  },
+  {
+    "className": "row",
+    "fieldGroup": [
+      {
+        "className": "col-xs-6",
+        "type": "textarea",
+        "key": "organization_address",
+        "templateOptions": {
+          "type": "text",
+          "rows": 2,
+          "placeholder": "Organization Address",
+          "label": "Organization Address"
+        }
+      }
+    ]
+  },
+  {
+    "className": "row",
+    "fieldGroup": [
+      {
+        "className": "col-xs-8",
+        "type": "input",
+        "key": "organization_website",
+        "templateOptions": {
+          "type": "input",
+          "placeholder": "http://www.yourorganization.com",
+          "label": "Website"
+        }
+      }
+    ]
+  },
+  {
+    "className": "section-label",
+    "template": "<br/><h4>2. Contact Information</h4><hr />"
+  },
+  {
+    "className": "row",
+    "fieldGroup": [
+      {
+        "className": "col-xs-3",
+        "type": "input",
+        "key": "first_name",
+        "templateOptions": {
+          "type": "text",
+          "placeholder": "First Name",
+          "label": "First Name",
+          "required": true
+        },
+        "validation": {
+          "show": true
+        }
+      },
+      {
+        "className": "col-xs-offset-1 col-xs-5",
+        "type": "input",
+        "key": "last_name",
+        "templateOptions": {
+          "type": "text",
+          "placeholder": "Last Name",
+          "label": "Last Name",
+          "required": true
+        },
+         "validation": {
+          "show": true
+      	}
+      }
+    ]
+  },
+  {
+    "className": "row",
+    "fieldGroup": [
+      {
+        "className": "col-xs-3",
+        "type": "input",
+        "key": "phone",
+        "templateOptions": {
+          "type": "phone",
+          "placeholder": "1-444-444-4444",
+          "label": "Phone Number",
+          "required": true
+        },
+         "validation": {
+          "show": true
+      	}
+      },
+      {
+        "className": "col-xs-offset-1 col-xs-6",
+        "type": "input",
+        "key": "email",
+        "templateOptions": {
+          "type": "email",
+          "placeholder": "myemail@myorganization.com",
+          "label": "Email Address",
+          "required": true
+        },
+         "validation": {
+          "show": true
+      	}
+      }
+    ]
+  },
+  {
+    "className": "section-label",
+    "template": "<br/><h4>3. Project Proposal</h4><hr />"
+  },
+  {
+    "className": "row",
+    "fieldGroup": [
+      {
+        "className": "col-xs-6",
+        "type": "input",
+        "key": "project_name",
+        "templateOptions": {
+          "type": "text",
+          "placeholder": "Program / Project Name",
+          "label": "Program / Project Name",
+          "required": true
+        },
+         "validation": {
+          "show": true
+      	}
+      }
+    ]
+  },
+  {
+    "className": "row",
+    "fieldGroup": [
+      {
+        "className": "col-xs-4",
+        "type": "input",
+        "key": "project_cost_estimate",
+        "templateOptions": {
+          "type": "number",
+          "label": "Estimated total cost of the project",
+          "required": true,
+          "addonLeft": {
+          	"text":"$"
+          }
+        },
+         "validation": {
+          "show": true
+      	}
+      }
+    ]
+  },
+  {
+    "className": "row",
+    "fieldGroup": [
+      {
+        "className": "col-xs-4",
+        "type": "input",
+        "key": "project_grant_amount_requested",
+        "templateOptions": {
+          "type": "number",
+          "label": "Amount of grant requested",
+          "required": true,
+          "addonLeft": {
+          	"text":"$"
+          }
+        },
+         "validation": {
+          "show": true
+      	}
+      }
+    ]
+  },
+  {
+    "className": "row",
+    "fieldGroup": [
+      {
+        "className": "col-xs-12",
+        "type": "textarea",
+        "key": "project_other_assistance",
+        "templateOptions": {
+          "type": "text",
+          "rows": 3,
+          "placeholder": "Assistance requested other than monetary",
+          "label": "Assistance requested other than monetary"
+        }
+      }
+    ]
+  },
+    {
+    "className": "row",
+    "fieldGroup": [
+      {
+        "className": "col-xs-12",
+        "type": "textarea",
+        "key": "project_description",
+        "templateOptions": {
+          "type": "text",
+          "rows": 6,
+          "placeholder": "What the project will be, what will happen, who will be involved, etc.",
+          "label": "Description of the project",
+          "required":true
+        },
+         "validation": {
+          "show": true
+      	}
+      }
+    ]
+  },
+    {
+    "className": "row",
+    "fieldGroup": [
+      {
+        "className": "col-xs-12",
+        "type": "textarea",
+        "key": "project_objectives",
+        "templateOptions": {
+          "type": "text",
+          "rows": 5,
+          "placeholder": "Explain how the project meets the objectives of the community",
+          "label": "Specific objective(s)",
+          "required":true
+        },
+         "validation": {
+          "show": true
+      	}
+      }
+    ]
+  },
+    {
+    "className": "row",
+    "fieldGroup": [
+      {
+        "className": "col-xs-12",
+        "type": "textarea",
+        "key": "project_expected_results",
+        "templateOptions": {
+          "type": "text",
+          "rows": 5,
+          "placeholder": "As far as possible, the results must be measurable on the basis of criteria laid down for that purpose",
+          "label": "Expected results and their use",
+          "required":true
+        },
+         "validation": {
+          "show": true
+      	}
+      }
+    ]
+  },
+    {
+    "className": "row",
+    "fieldGroup": [
+      {
+        "className": "col-xs-4",
+        "type": "input",
+        "key": "project_start_date",
+        "templateOptions": {
+          "type": "date",
+          "label": "Proposed Start Date",
+          "required":true
+        },
+         "validation": {
+          "show": true
+      	}
+      },
+      {
+        "className": "col-xs-offset-1 col-xs-4",
+        "type": "input",
+        "key": "project_end_date",
+        "templateOptions": {
+          "type": "date",
+          "label": "Expected End Date",
+          "required":true
+        },
+         "validation": {
+          "show": true
+      	}
+      }
+    ]
+  },
+  {
+    "className": "row",
+    "fieldGroup": [
+      {
+        "className": "col-xs-12",
+        "type": "textarea",
+        "key": "project_plan",
+        "templateOptions": {
+          "type": "text",
+          "rows": 3,
+          "placeholder": "Detailed timetable and expenses for carrying out each stage of the project showing the main key dates and the objectives/expected results for each stage",
+          "label": "Project Plan",
+          "required":true
+        },
+         "validation": {
+          "show": true
+      	}
+      }
+    ]
+  }
+]

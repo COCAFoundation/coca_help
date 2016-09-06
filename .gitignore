@@ -3,11 +3,20 @@ vendor/
 build/
 .svn/
 config/
+bower_components/
 logs/
+data/
 *.svn
 *.svn-base
 composer.lock
+/vendor/
+/logs/*
+!/logs/README.md
 
 *.ini
 
 lresptofunrun.log
+
+.DS_Store
+
+config/build.properties.sample
