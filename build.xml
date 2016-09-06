@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project name="lresptofunrun" default="dist">
+<project name="AidRequest" default="dist">
     <property file="config/build.properties" />
     <!-- ============================================  -->
     <!-- Target: prepare                               -->
@@ -92,22 +92,6 @@
         dir="${${environment}.documentroot}/config/"
         clearfirst="true">
         <fileset dir="./build/${environment}/config/">
-          <include name="*.*"/>
-          <exclude name=".DS_Store"/>
-        </fileset>
-      </ftpdeploy>
-
-      <echo msg="pushing data files to ${environment} server" />
-      <ftpdeploy
-        passive="true"
-        level="verbose"
-        host="${${environment}.ftphostname}"
-        port="${${environment}.ftpport}"
-        username="${${environment}.username}"
-        password="${${environment}.password}"
-        dir="${${environment}.documentroot}/data/"
-        clearfirst="true">
-        <fileset dir="./build/${environment}/data/">
           <include name="*.*"/>
           <exclude name=".DS_Store"/>
         </fileset>
