@@ -20,10 +20,27 @@ This single page application is used to support the Children of Central Asia Fou
 
 ##Configuration
 
-This project requires configuration files (See below) and data files (pulled from CauseVox).
+This project leverages Dreamhost shared hosting which has some setup.
+
+1. [Passwordless login](https://help.dreamhost.com/hc/en-us/articles/216499537-How-to-configure-passwordless-login-in-Mac-OS-X-and-Linux)
+2. [Setup Composer on Dreamhost](https://help.dreamhost.com/hc/en-us/articles/214899037-Installing-Composer-overview)
+3. Setup file-info extension
 
 
+This was the finalized phprc file:
 
+    extension = phar.so
+    extension = fileinfo.so
+    extension = intl.so
+    suhosin.executor.include.whitelist = phar
+
+
+Finalized .bash_profile:
+
+    umask 002
+    PS1='[\h]$ '
+export PATH=/usr/local/php56/bin:$PATH
+export PATH=/home/<username>/.php/composer:$PATH
 
 
 
@@ -43,7 +60,7 @@ The Phing configuration is dynamic and will support any amount of environments. 
 1. clone branch to remote location that you want to deploy to. For example, I cloned "test" to my testfunrunfbapp directory but it is test....yeah yeah.....). So I just ran some shell magic to initialize the environment.
 
 
-    git clone https://github.com/davidlarrimore/lresptofunrun.git ./
+    git clone https://github.com/COCAFoundation/coca_help.git ./
     git checkout dev  # <-- name of the branch I wanted
     composer update # <-- for some reason, phing couldn't run this the first time.
     composer install # <-- for some reason, phing couldn't run this the first time.

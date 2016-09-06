@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project name="lresptofunrun" default="dist">
+<project name="AidRequest" default="dist">
     <property file="config/build.properties" />
     <!-- ============================================  -->
     <!-- Target: prepare                               -->
@@ -26,7 +26,6 @@
       <echo msg="Preparing ${environment} build directory structure" />
       <mkdir dir="./build/${environment}" />
       <mkdir dir="./build/${environment}/config" />
-      <mkdir dir="./build/${environment}/data" />
     </target>
 
 
@@ -57,13 +56,6 @@
 
       <echo msg="Copying ${environment} config files to appropriate directory..." />
       <copy file="./config/${environment}-settings.php" tofile="./build/${environment}/config/settings.php" />
-
-      <echo msg="Copying ${environment} data files to appropriate directory..." />
-      <filesync
-        sourcedir="data"
-        destinationdir="./build/${environment}/"
-        exclude=".DS_Store"
-        delete="True" />
 
     </target>
 
@@ -100,22 +92,6 @@
         dir="${${environment}.documentroot}/config/"
         clearfirst="true">
         <fileset dir="./build/${environment}/config/">
-          <include name="*.*"/>
-          <exclude name=".DS_Store"/>
-        </fileset>
-      </ftpdeploy>
-
-      <echo msg="pushing data files to ${environment} server" />
-      <ftpdeploy
-        passive="true"
-        level="verbose"
-        host="${${environment}.ftphostname}"
-        port="${${environment}.ftpport}"
-        username="${${environment}.username}"
-        password="${${environment}.password}"
-        dir="${${environment}.documentroot}/data/"
-        clearfirst="true">
-        <fileset dir="./build/${environment}/data/">
           <include name="*.*"/>
           <exclude name=".DS_Store"/>
         </fileset>
