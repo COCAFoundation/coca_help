@@ -15,4 +15,4 @@ composer update
 
 composer install
 
-vendor/beelab/bowerphp/bin/bowerphp install
+vendor/bin/bowerphp install
